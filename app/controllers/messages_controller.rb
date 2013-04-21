@@ -8,7 +8,11 @@ class MessagesController < ApplicationController
   end
   
   def create
-    
+    @test = params
+    Message.create(params_hash: params)
+    respond_to do |format|
+      format.json { render :json => @test }
+    end
   end
   
   def edit
