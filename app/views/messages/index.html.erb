@@ -1,9 +1,10 @@
 <h1>FolioShine Prototype</h1>
 <div class="row">
-    
-    <% @messages.each do |message| %>
-        <div class="span4">
-            <%= image_tag(message.image_url) %>
-        </div>
+    <% if !@messages.empty? %>
+        <% @messages.each do |message| %>
+            <div class="span4">
+                <%= image_tag(message.image_url) %>
+            </div>
+        <% end %>
     <% end %>
 </div>
