@@ -1,0 +1,13 @@
+@import "bootstrap";
+body { padding-top: 60px; }
+@import "bootstrap-responsive";
+
+h1 {
+    margin-bottom: 20px;
+    text-align:center;
+}
+
+div.container div.span4 img {
+    width:350px;
+    height:225px;
+}

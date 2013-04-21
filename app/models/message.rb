@@ -1,4 +1,4 @@
 class Message < ActiveRecord::Base
-  attr_accessible :test, :params_hash
-  serialize :params_hash, JSON
+  attr_accessible :campaign_id, :msisdn, :carrier, :message, :image_url
+  
 end
