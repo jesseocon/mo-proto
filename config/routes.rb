@@ -1,6 +1,11 @@
 MoProto::Application.routes.draw do
   root to: "messages#index"
   resources :messages
+  resources :folios do
+    collection do 
+      get 'keyword_available'
+    end
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

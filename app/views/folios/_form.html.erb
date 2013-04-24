@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="span6">
+        <%# form_for @folio do |f| %>
+            <%# render 'shared/error_messages' %>
+            <%# f.label :name, 'Folio Name' %>
+            <%# f.text_field :name %>
+            
+            <%# f.label :hashtag, 'Keyword' %>
+            <%# f.text_field :hashtag, data: { url: keyword_available_folios_path }%>
+            
+            <%# f.submit class: 'btn btn-primary' %>
+        <%# end %>
+        <%= label_tag "hashtag", "Keyword" %>
+        <%= text_field_tag "hashtag" %>
+        
+        <p class="btn btn-primary" 
+            id="check-availability" 
+            data-url="<%= keyword_available_folios_path %>"
+        >
+            Check Availability
+        </p>
+        <p id="keyword-message"></p>
+    </div> 
+</div>
+
