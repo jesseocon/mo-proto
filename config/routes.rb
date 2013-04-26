@@ -1,11 +1,16 @@
 MoProto::Application.routes.draw do
-  root to: "messages#index"
+  get 'signup',     to: 'users#new',        as: 'signup'
+  get 'login',      to: 'sessions#new',     as: 'login'
+  delete 'logout',  to: 'sessions#destroy', as: 'logout'
+  root to: "users#index"
   resources :messages
   resources :folios do
     collection do 
       get 'keyword_available'
     end
   end
+  resources :users
+  resources :verifications
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

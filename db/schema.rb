@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130422001433) do
+ActiveRecord::Schema.define(:version => 20130426040418) do
 
   create_table "folios", :force => true do |t|
     t.string   "name"
@@ -29,5 +29,21 @@ ActiveRecord::Schema.define(:version => 20130422001433) do
     t.text     "message"
     t.string   "image_url"
   end
+
+  create_table "users", :force => true do |t|
+    t.string   "email"
+    t.string   "password_digest"
+    t.string   "auth_token"
+    t.string   "password_reset_token"
+    t.datetime "password_reset_at"
+    t.string   "verification_token"
+    t.boolean  "verified"
+    t.boolean  "admin"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+  end
+
+  add_index "users", ["email"], :name => "index_users_on_email"
+  add_index "users", ["verification_token"], :name => "index_users_on_verification_token"
 
 end
