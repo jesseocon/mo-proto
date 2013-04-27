@@ -1,9 +1,12 @@
 MoProto::Application.routes.draw do
+  
   get 'signup',     to: 'users#new',        as: 'signup'
   get 'login',      to: 'sessions#new',     as: 'login'
   delete 'logout',  to: 'sessions#destroy', as: 'logout'
+  
   root to: "users#index"
   resources :messages
+  resources :password_resets
   resources :folios do
     collection do 
       get 'keyword_available'
