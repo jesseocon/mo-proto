@@ -1,6 +1,10 @@
 class UserMailer < ActionMailer::Base
-  default from: "from@example.com"
-  default_url_options[:host] = "localhost:3000"
+  default :from => "from@example.com"
+  if Rails.env.production?
+    default_url_options[:host] = "frozen-spire-6104.herokuapp.com"
+  else
+    default_url_options[:host] = "localhost:3000" 
+  end
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
