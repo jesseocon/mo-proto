@@ -8,7 +8,7 @@ MoProto::Application.routes.draw do
   get 'login',      to: 'sessions#new',       as: 'login'
   delete 'logout',  to: 'sessions#destroy',   as: 'logout'
   
-  root to: "users#index"
+  root to: "static_pages#home"
   resources :messages
   resources :password_resets
   resources :folios do
