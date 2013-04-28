@@ -18,20 +18,27 @@ body#home-page {
 }
 #folio-logo{
     margin-left:70px;
-    margin-top:-155px;
+    margin-top: 10px;
+    margin-right: 10px;
     background:black;
     border-radius:20px;
+    float:right;
+}
+#samsung {
+    float:right;
+    margin-top:20px;
+    margin-right:-10px;
 }
 #header-buttons .span12{
 }
 
 #header-buttons .span12 div.button-container {
     float:right;
+    margin-top:-47px;
 }
 
 #header-buttons .span12 p {
     display:inline-block;
-    margin-top:-60px;
     margin-left:10px;
     font-size:20px;
     padding-top: 10px;
