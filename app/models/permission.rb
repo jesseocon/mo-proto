@@ -5,6 +5,7 @@ class Permission < Struct.new(:user)
     allow :password_resets, [:new, :create, :edit, :update]
     allow :sessions,        [:create, :destroy, :new]
     allow :users,           [:index, :new, :create]
+    allow :static_pages,    [:home, :about, :help]
     allow :verifications,   [:show]
     if user
       allow :users, [:show]

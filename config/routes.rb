@@ -1,8 +1,12 @@
 MoProto::Application.routes.draw do
   
-  get 'signup',     to: 'users#new',        as: 'signup'
-  get 'login',      to: 'sessions#new',     as: 'login'
-  delete 'logout',  to: 'sessions#destroy', as: 'logout'
+  get 'home',       to: "static_pages#home",  as: 'home'
+  get 'help',       to: "static_pages#help",  as: 'help'
+  get 'about',      to: "static_pages#about", as: 'about'
+
+  get 'signup',     to: 'users#new',          as: 'signup'
+  get 'login',      to: 'sessions#new',       as: 'login'
+  delete 'logout',  to: 'sessions#destroy',   as: 'logout'
   
   root to: "users#index"
   resources :messages
