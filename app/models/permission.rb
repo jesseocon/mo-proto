@@ -1,11 +1,18 @@
 class Permission < Struct.new(:user)
   def initialize(user)
-    allow :folios,          [:index, :new, :create, :edit, :update, :show, :destroy]
+    allow :folios,          [:index, :new, :create, :show, :destroy]
     allow :messages,        [:index, :new, :create, :edit, :update, :show, :destroy]
     allow :password_resets, [:new, :create, :edit, :update]
     allow :sessions,        [:create, :destroy, :new]
-    allow :users,           [:new, :create, :index, :edit, :update, :destroy, :show]
+    allow :users,           [:index, :new, :create]
     allow :verifications,   [:show]
+    if user
+      allow :users, [:show]
+      allow :users, [:edit, :update, :destroy] do |u|
+        u.id == user.id
+      end
+      allow_all if user.admin
+    end
   end
   
   def allow?(controller, action, resource = nil)

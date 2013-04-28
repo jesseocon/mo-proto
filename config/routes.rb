@@ -12,6 +12,7 @@ MoProto::Application.routes.draw do
       get 'keyword_available'
     end
   end
+  resources :sessions
   resources :users
   resources :verifications
   # The priority is based upon order of creation:

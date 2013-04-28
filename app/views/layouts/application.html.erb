@@ -6,13 +6,28 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
+<header class="navbar navbar-fixed-top">
+  <nav class="navbar-inner">
+    <div class="container">
+      <%# render 'layouts/navigation' %>
+      <% if current_user %>
+          <%= link_to 'Sign Out', logout_path, 
+               method: :delete, 
+               confirmation: "Are you sure" 
+          %>
+          Logged in as <%= current_user.email %>
+      <% else %>
+          <%= link_to "Log In", login_path %> or &nbsp;
+          <%= link_to "Sign Up", signup_path %>
+      <% end %>
+    </div>
+  </nav>
+</header>
 <body>
-<div class="main" role="main">
-    <div class="container content">
-        <%= yield %>
-    </div><!-- end of container -->
-</div><!-- end of main -->
-
-
+    <div class="main" role="main">
+        <div class="container content">
+            <%= yield %>
+        </div><!-- end of container -->
+    </div><!-- end of main -->
 </body>
 </html>
