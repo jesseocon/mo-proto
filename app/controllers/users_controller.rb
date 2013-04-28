@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_filter :find_user, only: [:edit, :update, :show, :destroy]
+  layout 'signing'
   def index
     @users = User.all
   end

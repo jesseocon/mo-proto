@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FolioShine</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body id="home-page">
+    <div class="main" role="main">
+        <div class="folio-shine">
+            <%= image_tag('FolioShineLogo2.png', id: 'folio-logo') %>
+        </div>
+        <div class="container">
+            <%= yield %>
+        </div><!-- end of container -->
+    </div><!-- end of main -->
+</body>
+</html>
