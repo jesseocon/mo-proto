@@ -8,10 +8,19 @@ body#home-page {
 }
 
 .folio-shine {
-    background: gray;
-    height:80px;
-    opacity: .8;
-    width:50%
+    background:black;
+    height:135px;
+    width:50%;
+    border-radius: 20px;
+    -moz-box-shadow: 3px 3px 3px #232323;
+    -webkit-box-shadow: 3px 3px 5px #232323;
+    box-shadow: 3px 3px 5px #232323;
+}
+#folio-logo{
+    margin-left:70px;
+    margin-top:-155px;
+    background:black;
+    border-radius:20px;
 }
 #header-buttons .span12{
 }
@@ -22,7 +31,7 @@ body#home-page {
 
 #header-buttons .span12 p {
     display:inline-block;
-    margin-top:-72px;
+    margin-top:-60px;
     margin-left:10px;
     font-size:20px;
     padding-top: 10px;

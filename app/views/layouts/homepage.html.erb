@@ -12,10 +12,14 @@
         <div class="container">
             <div class="row" id="header-buttons">
                 <div class="span12">
+                    <%= image_tag('FolioShineLogo2.png', id: 'folio-logo') %>
                     <div class="button-container">
-                        <p class="btn btn-primary btn-large first">Sign Up!</p>
-                        <p class="btn btn-success btn-large">Log In</p> 
+                        <p class="btn btn-primary btn-large first" id="sign-up">Sign Up!</p>
+                        <p class="btn btn-success btn-large" id="login">Log In</p> 
                     </div>
+                </div>
+                <div class="span4 offset8">
+                    <%= image_tag('samsungg3.png', id: 'samsung') %>
                 </div>
             </div>
             <%= yield %>
