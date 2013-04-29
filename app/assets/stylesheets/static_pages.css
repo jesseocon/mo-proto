@@ -43,6 +43,10 @@ body#home-page {
     font-size:20px;
     padding-top: 10px;
 }
+#header-buttons .span12 p a {
+    text-decoration:none;
+    color:white;
+}
 
 #bg {
   position: fixed; 
