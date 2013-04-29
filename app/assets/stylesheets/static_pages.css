@@ -1,12 +1,17 @@
 body#home-page {
      padding:0px;
+     background: url(party-background.jpg) no-repeat center center fixed; 
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
 }
 
 .folio-shine {
     background:black;
     height:135px;
     width:50%;
-    border-radius: 20px;
+    border-radius: 0 20px 20px 0;
     -moz-box-shadow: 3px 3px 3px #232323;
     -webkit-box-shadow: 3px 3px 5px #232323;
     box-shadow: 3px 3px 5px #232323;

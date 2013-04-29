@@ -1,0 +1,44 @@
+#session-form-div {
+    margin-top:120px;
+    padding-top: 0;
+    border-radius: 8px;
+    background: -moz-linear-gradient(top, #C7C7C7, #C8C8C8);
+    background: -webkit-gradient(linear, left top, left bottom, from(#C8C8C8), to(#C8C8C8));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#C8C8C8', endColorstr='#C8C8C8');
+    -moz-box-shadow: 3px 3px 3px #232323;
+    -webkit-box-shadow: 3px 3px 5px #232323;
+    box-shadow: 3px 3px 5px #232323;
+}
+#session-form-div input, label{
+    margin-left:20px;
+}
+
+#sign-in-header {
+    padding:10px 0 5px; 0;  
+    border-bottom: solid #818181 1px;
+    border-radius:8px 8px 0 0;
+    margin-bottom:15px;
+}
+#sign-in-header h4 {
+    font-size: 1.2em;
+    margin-left:20px;
+    margin-bottom:3px;
+}
+#remember-me label, input[type="checkbox"], p {
+    float:left;
+    display:inline;
+    margin-left:5px;
+}
+
+#password {
+    width:50%
+}
+#session-form-div input#sign-in-submit {
+    margin-top:-7px;
+    margin-left:14px;
+}
+#remember-me a {
+    text-decoration:none;
+    color:#333;
+}
+

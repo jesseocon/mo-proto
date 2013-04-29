@@ -1,0 +1,36 @@
+#user-form-div {
+    margin-top:20px;
+    padding-top: 0;
+    border-radius: 8px;
+    background: -moz-linear-gradient(top, #C8C8C8, #818181);
+    background: -webkit-gradient(linear, left top, left bottom, from(#C8C8C8), to(#818181));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#C8C8C8', endColorstr='#818181');
+    -moz-box-shadow: 3px 3px 3px #232323;
+    -webkit-box-shadow: 3px 3px 5px #232323;
+    box-shadow: 3px 3px 5px #232323;
+}
+
+#user-form-div input, label{
+    margin-left:20px;
+}
+
+#user-form-div input {
+    margin-top:0px;
+}
+#user-form-div label {
+    margin-bottom:2px;
+    font-weight: 600;
+}
+
+#sign-up-header {
+    padding:10px 0 5px; 0;  
+    border-bottom: solid #818181 1px;
+    border-radius:8px 8px 0 0;
+    margin-bottom:15px;
+}
+#sign-up-header h4 {
+    font-size: 1.2em;
+    margin-left:20px;
+    margin-bottom:3px;
+}
+
