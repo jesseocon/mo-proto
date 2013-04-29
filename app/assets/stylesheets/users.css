@@ -13,6 +13,9 @@
 #user-form-div input, label{
     margin-left:20px;
 }
+#user-form-div input[type="text"], input[type="password"] {
+    width:80%;
+}
 
 #user-form-div input {
     margin-top:0px;

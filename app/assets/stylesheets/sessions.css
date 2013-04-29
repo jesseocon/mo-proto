@@ -13,6 +13,10 @@
     margin-left:20px;
 }
 
+#session-form-div input[type="text"] {
+    width:79%
+}
+
 #sign-in-header {
     padding:10px 0 5px 0;  
     border-bottom: solid #818181 1px;
