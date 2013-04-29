@@ -15,8 +15,8 @@
 }
 #user-form-div input[type="text"], input[type="password"] {
     width:80%;
-    -moz-box-shadow: 3px 3px 3px #818181;
-    -webkit-box-shadow: 3px 3px 5px #818181;
+    -moz-box-shadow: inset 3px 3px 3px #818181;
+    -webkit-box-shadow: inset 3px 3px 5px #818181;
     box-shadow: inset 1px 2px 1px #818181;
 }
 
