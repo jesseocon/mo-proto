@@ -14,15 +14,15 @@
 }
 
 #session-form-div input[type="text"] {
-    width:79%
-    -moz-box-shadow: 3px 3px 3px #818181;
-    -webkit-box-shadow: 3px 3px 5px #818181;
+    width:79%;
+    -moz-box-shadow: inset 3px 3px 3px #818181;
+    -webkit-box-shadow: inset 3px 3px 5px #818181;
     box-shadow: inset 1px 2px 1px #818181;
 }
 #session-form-div input[type="password"] {
-    /*-moz-box-shadow: inset 3px 3px 3px #818181;
+    -moz-box-shadow: inset 3px 3px 3px #818181;
     -webkit-box-shadow: inset 3px 3px 5px #818181;
-    box-shadow: inset 1px 2px 1px #818181;*/  
+    box-shadow: inset 1px 2px 1px #818181; 
 }
 
 #sign-in-header {
@@ -43,7 +43,7 @@
 }
 
 #password {
-    width:50%
+    width:50%;
 }
 #session-form-div input#sign-in-submit {
     margin-top:-7px;
