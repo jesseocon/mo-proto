@@ -1,5 +1,6 @@
 class PasswordResetsController < ApplicationController
   before_filter :load_user_by_reset_token, only: [:edit, :update]
+  layout 'signing'
   def new
   end
   

@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default :from => "from@example.com"
+  default :from => "app15115987@heroku.com"
   if Rails.env.production?
     default_url_options[:host] = "frozen-spire-6104.herokuapp.com"
   else
