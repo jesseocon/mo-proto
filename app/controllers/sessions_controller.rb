@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  layout 'signing'
   def new
   end
   
@@ -15,7 +16,7 @@ class SessionsController < ApplicationController
       flash.now[:error] = "You have to verify your account first"
       redirect_to login_url
     else
-      flash.now.alert = "Email or password is invalid"
+      flash.now[:error] = "Email or password is invalid"
       render "new"
     end
   end
