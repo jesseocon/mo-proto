@@ -12,6 +12,10 @@
 #session-form-div input, label{
     margin-left:20px;
 }
+#session-form-div input {
+        padding-top:8px;
+    padding-bottom:8px;
+}
 
 #session-form-div input[type="text"] {
     width:79%;
@@ -43,7 +47,7 @@
 }
 
 #password {
-    width:50%;
+    width:58%;
 }
 #session-form-div input#sign-in-submit {
     margin-top:-7px;
