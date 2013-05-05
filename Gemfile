@@ -1,6 +1,13 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
+gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'httparty'
+gem 'jquery-rails', '2.0.2'
+gem 'json'
+gem 'multi_json'
+gem 'multi_xml'
+gem 'stripe'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
@@ -16,11 +23,6 @@ group :assets do
   gem 'uglifier', '1.2.3'
   gem 'bootstrap-sass'
 end
-
-gem 'jquery-rails', '2.0.2'
-gem 'bcrypt-ruby', '~> 3.0.0'
-gem 'json'
-gem 'stripe'
 
 group :test do
   gem 'capybara', '1.1.2'

@@ -15,11 +15,37 @@
         
         <p class="btn btn-primary" 
             id="check-availability" 
-            data-url="<%= keyword_available_folios_path %>"
+            data-url="<%= check_availability_folios_path %>"
         >
             Check Availability
         </p>
         <p id="keyword-message"></p>
     </div> 
 </div>
+<div class="row">
+    <div class="span6">
+        <p class="btn btn-primary" 
+            id="register-keyword" 
+            data-url="<%= register_keyword_folios_path %>">
+                Purchase Keyword
+        </p>
+        <p id="purchase-message"></p>
+    </div>
+</div>
+<div class="row">
+    <div class="span6">
+        <p class="btn btn-danger"
+            id="deregister-keyword"
+            data-url="<%= deregister_keyword_folios_path %>">
+            Delete Keyword
+        </p>
+        <p id="delete-message"></p>
+    </div>
+</div>
+
+
+
+
+
+
 

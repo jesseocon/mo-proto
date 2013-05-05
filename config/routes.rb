@@ -13,7 +13,9 @@ MoProto::Application.routes.draw do
   resources :password_resets
   resources :folios do
     collection do 
-      get 'keyword_available'
+      get 'check_availability'
+      get 'register_keyword'
+      get 'deregister_keyword'
     end
   end
   resources :sessions

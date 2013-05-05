@@ -65,6 +65,9 @@ GEM
     guard-rspec (1.2.1)
       guard (>= 1.1)
     hike (1.2.2)
+    httparty (0.9.0)
+      multi_json (~> 1.0)
+      multi_xml
     i18n (0.6.1)
     journey (1.0.4)
     jquery-rails (2.0.2)
@@ -83,6 +86,7 @@ GEM
     method_source (0.8.1)
     mime-types (1.22)
     multi_json (1.7.2)
+    multi_xml (0.5.1)
     nokogiri (1.5.9)
     pg (0.12.2)
     polyglot (0.3.3)
@@ -179,8 +183,11 @@ DEPENDENCIES
   coffee-rails (= 3.2.2)
   growl (= 1.0.3)
   guard-rspec (= 1.2.1)
+  httparty
   jquery-rails (= 2.0.2)
   json
+  multi_json
+  multi_xml
   pg (= 0.12.2)
   rails (= 3.2.13)
   rb-fsevent
