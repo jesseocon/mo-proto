@@ -8,17 +8,29 @@ class Folio < ActiveRecord::Base
   validates :hashtag, :length => { :maximum => 24 }
   validates_uniqueness_of :hashtag
   
-  def album_keyword
-    
+  BASE_URL = "https://api.mogreet.com/cm/keyword."
+  CAMPAIGN_ID = "&campaign_id=29701"
+  CLIENT_ID = "?client_id=1383"
+  FORMAT = "&format=json"
+  TOKEN = "&token=dcb7872095eb4650c3818088062bbaa6"
+  
+  
+  def self.check_availability(keyword)
+    kw_param = "&keyword=#{keyword}"
+    method = 'check'
+    final_url = "#{BASE_URL}#{method}#{CLIENT_ID}#{TOKEN}#{kw_param}#{FORMAT}"
   end
   
-  def self.check_availability(hashtag)
-    f = Folio.find_by_hashtag(hashtag)
-    if f.nil?
-      return true
-    else
-      return false
-    end
+  def self.register_keyword(keyword)
+    kw_param = "&keyword=#{keyword}"
+    method = 'add'
+    final_url = "#{BASE_URL}#{method}#{CLIENT_ID}#{TOKEN}#{CAMPAIGN_ID}#{kw_param}#{FORMAT}"
+  end
+  
+  def self.deregister_keyword(keyword)
+    kw_param = "&keyword=#{keyword}"
+    method = 'remove'
+    final_url = "#{BASE_URL}#{method}#{CLIENT_ID}#{TOKEN}#{CAMPAIGN_ID}#{kw_param}#{FORMAT}"
   end
   
 end
