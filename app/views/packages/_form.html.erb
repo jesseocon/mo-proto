@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="span6" id="package-form-div">
+        <%= form_for @package do |f| %>
+            <%= f.label :name %>
+            <%= f.text_field :name %>
+            
+            <%= f.label :price %>
+            <%= f.text_field :price %>
+            
+            <%= f.label :photo_qty %>
+            <%= f.text_field :photo_qty %>
+            
+            <div>
+                <%= f.submit class: 'btn btn-primary' %>
+            </div>
+            
+        <% end %>
+    </div>
+</div>

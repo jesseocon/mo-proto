@@ -1,5 +1,7 @@
 class Folio < ActiveRecord::Base
   attr_accessible :name, :hashtag
+  belongs_to :package
+  
   validates :name, :presence => true
   validates :name, :length => { :minimum => 3 }
   validates :name, :length => { :maximum => 24 }
