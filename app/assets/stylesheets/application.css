@@ -12,25 +12,26 @@
 *= require_tree .
 */
  
-header img {
+#white-logo {
     height:80px;
     margin-left:-5px;
 }
- 
-#navbar {
-    
-}
-#navbar ul {
+
+header ul {
     list-style-type:none;
-    display:inline;
+    vertical-align:bottom;
+    margin-left:0px
+    margin-top:0px;
+    float:right;
 }
-#navbar ul li {
+header ul li {
     color:#666666;
-    float:left;
     font-weight:600;
-    margin-right:10px;
+    margin-right:0px;
     margin-bottom:30px;
-    margin-top:-10px;
+    margin-top:39px;
+    margin-left:10px;
+    display:inline-block;
 }
  
 #sidebar {
@@ -55,6 +56,5 @@ header img {
 }
 
 #content {
- background:gray;
- height:400px;
+
 }
