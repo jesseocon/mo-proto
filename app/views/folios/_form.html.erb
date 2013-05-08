@@ -1,37 +1,82 @@
 <div class="row">
-    <div class="span6">
-        <%= label_tag "hashtag", "Keyword" %>
-        <%= text_field_tag "hashtag" %>
-        
-        <p class="btn btn-primary" 
-            id="check-availability" 
-            data-url="<%= check_availability_folios_path %>"
-        >
-            Check Availability
-        </p>
-        <p id="keyword-message"></p>
-    </div> 
-</div>
-<div class="row">
-    <div class="span6">
-        <p class="btn btn-primary" 
-            id="register-keyword" 
-            data-url="<%= register_keyword_folios_path %>">
-                Purchase Keyword
-        </p>
-        <p id="purchase-message"></p>
-    </div>
-</div>
-<div class="row">
-    <div class="span6">
-        <p class="btn btn-danger"
-            id="deregister-keyword"
-            data-url="<%= deregister_keyword_folios_path %>">
-            Delete Keyword
-        </p>
-        <p id="delete-message"></p>
-    </div>
-</div>
+ <div class="span9" id="folio-form">
+    <div class="row">
+        <div class="span4">
+            <div class="row">
+                <div class="span4">
+                    <div id="choose-name-div">
+                        <h3 id="choose-name">Choose a Folio name</h3>
+                        <%= text_field_tag "keyword" %>
+                    </div><!-- end of choose-name-div -->
+                    <div id="check-avail-button-div">
+                        <button id="check-availability-button" 
+                            class="btn btn-primary"
+                            data-loading-text="Checking..."
+                            data-complete-text="Complete!">
+                            CHECK AVAILABILITY
+                        </button>
+                    </div><!-- end of check-avail-button-div -->
+                    <div id="check-availability-div">
+                        <div id='message'></div><!-- end of message-->
+                    </div><!-- end of check-availability-div -->
+                </div><!-- end of span4 -->
+                <div class="span4">
+                    <div id="choose-folio-div">
+                         <h3 id="choose-folio">Choose a Folio Package</h3>
+                    </div>
+                    <h5>(Number of photos texted to folio)</h5>
+                    <ul id="package-radios">
+                        <li>
+                            <div>
+                                <%= radio_button_tag 'package', 'mini', false %>
+                                <%= label_tag "Mini - 25 Photos - $4.99" %>
+                            </div>  
+                        </li>
+                        <li>
+                            <div>
+                                <%= radio_button_tag 'package', 'basic', true %>
+                                <%= label_tag "Basic - 50 Photos - $9.99" %>
+                            </div> 
+                        </li>
+                        <li>
+                            <div>
+                                <%= radio_button_tag 'package', 'soiree' %>
+                                <%= label_tag "Soiree - 100 Photos - $14.99" %>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <%= radio_button_tag 'package', 'party' %>
+                                <%= label_tag "Party - 150 Photos - $19.99" %>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <%= radio_button_tag 'package', 'gala' %>
+                                <%= label_tag "Gala - 210 Photos - $25.99" %>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <%= radio_button_tag 'package', 'gala' %>
+                                <%= label_tag "Premiere - 310 Photos - $35.99" %>
+                            </div>
+                        </li>    
+                    </ul>
+                </div><!-- end of span4-->
+            </div><!-- end of row-->
+        </div><!-- end of span4-->
+        <div class="span3">
+            <div class="row">
+                 <div class="span3">
+                     <%= image_tag('samsungg3.png', id: 'info-phone') %>
+                 </div><!-- end of span3-->
+            </div><!-- end of row-->
+        </div><!-- end of span3-->
+    </div><!-- end of row--> 
+ </div><!-- end of folio-form-->
+</div><!-- end of main row-->
+
 
 
 

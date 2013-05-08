@@ -6,31 +6,7 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<header class="navbar navbar-fixed-top" id='header'>
-  <nav class="navbar-inner">
-    <div class="container">
-      <%= link_to image_tag('FSBGWHITE.png', id: 'white-logo'), '#', class: 'logo' %>
-      <ul>
-          <li>
-              <%= image_tag('icons/CreateFolioButton.png') %>
-              CREATE A FOLIO
-          </li>
-          <li>
-              <%= image_tag('icons/FindFolioButton.png') %>
-              FIND A FOLIO
-          </li>
-          <li>
-              <%= image_tag('icons/FindMemberButton.png') %>
-              FIND A MEMBER
-          </li>
-          <li>
-              <%= image_tag('icons/FindMemberButton.png') %>
-              HOW IT WORKS
-          </li>  
-      </ul>
-    </div>
-  </nav>
-</header>
+<%= render 'layouts/header' %>
 <body>
     <div class="container">
         <div class="row">
@@ -38,7 +14,7 @@
                 <%= render 'layouts/sidebar' %>
             </div>
             <div class="span9" id="content">
-                <%# yield %>
+                <%= yield %>
                 <div></div>
             </div>
         </div>

@@ -1,0 +1,17 @@
+#choose-name {
+    margin-left:0px;
+    margin-right:10px;
+    margin-top:6px;
+}
+
+#choose-folio {
+    display:inline-block;
+    margin-right:10px;
+}
+#choose-folio-div {
+    margin-top:20px;
+}
+#info-phone {
+    float:right;
+    margin-right:-10px;
+}
