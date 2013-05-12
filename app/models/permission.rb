@@ -7,6 +7,7 @@ class Permission < Struct.new(:user)
     allow :users,           [:index, :new, :create]
     allow :static_pages,    [:home, :about, :help]
     allow :verifications,   [:show]
+    allow :charges,         [:new, :create]
     if user
       allow :users, [:show]
       allow :users, [:edit, :update, :destroy] do |u|

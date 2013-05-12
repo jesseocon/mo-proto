@@ -16,12 +16,14 @@ MoProto::Application.routes.draw do
       get 'check_availability'
       get 'register_keyword'
       get 'deregister_keyword'
+      get 'confirmation'
     end
   end
   resources :sessions
   resources :users
   resources :verifications
   resources :packages
+  resources :charges
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -2,8 +2,14 @@
 <html>
 <head>
   <title>MoProto</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+  <script type="text/javascript">
+    // This identifies your website in the createToken call below
+    Stripe.setPublishableKey('pk_test_or7s6io2hRIhSyMnws8vwHzF');
+    // ...
+  </script>
   <%= csrf_meta_tags %>
 </head>
 <%= render 'layouts/header' %>

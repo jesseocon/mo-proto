@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+    <script type="text/javascript">
+      // This identifies your website in the createToken call below
+      Stripe.setPublishableKey('pk_test_or7s6io2hRIhSyMnws8vwHzF');
+      // ...
+    </script>
+    <%= javascript_include_tag "application" %>
+</head>
+<body>
+  <%= yield %>
+</body>
+</html>

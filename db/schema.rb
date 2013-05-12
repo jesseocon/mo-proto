@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130506013326) do
+ActiveRecord::Schema.define(:version => 20130512152947) do
+
+  create_table "charges", :force => true do |t|
+    t.integer  "amount"
+    t.integer  "folio_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "package_id"
+  end
+
+  add_index "charges", ["folio_id"], :name => "index_charges_on_folio_id"
+  add_index "charges", ["user_id"], :name => "index_charges_on_user_id"
 
   create_table "folios", :force => true do |t|
     t.string   "name"
@@ -19,7 +31,10 @@ ActiveRecord::Schema.define(:version => 20130506013326) do
     t.datetime "updated_at", :null => false
     t.integer  "package_id"
     t.string   "keyword"
+    t.integer  "user_id"
   end
+
+  add_index "folios", ["user_id"], :name => "index_folios_on_user_id"
 
   create_table "messages", :force => true do |t|
     t.datetime "created_at",  :null => false
@@ -53,6 +68,8 @@ ActiveRecord::Schema.define(:version => 20130506013326) do
     t.datetime "updated_at",           :null => false
     t.string   "phone"
     t.string   "name"
+    t.string   "last_4_digits"
+    t.string   "stripe_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

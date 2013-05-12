@@ -1,9 +1,9 @@
 $(document).ready(function(){
     
-    $('#check-availability').on('click', function(){
-
+    $('#check-availability').on('click', function(e){
+        e.preventDefault();
         var availability_url = $(this).data('url'),
-            keyword          = $('#hashtag').val();
+            keyword          = $('#keyword').val();
             
         $.ajax({
             type: 'GET',
@@ -14,12 +14,14 @@ $(document).ready(function(){
                
                if ( data == true ) {
                     
-                    $('#keyword-message').html('The keyword is available').
+                    $('#keyword-message')
+                        .html('The keyword '+ keyword +' is available').
                     removeClass('error').
                     addClass('ok');
                } else {
                    
-                    $('#keyword-message').html('The keyword is not available').
+                    $('#keyword-message')
+                        .html('The keyword '+ keyword +' is not available').
                     removeClass('ok').
                     addClass('error')
                     

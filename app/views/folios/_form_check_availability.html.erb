@@ -1,0 +1,19 @@
+<div class="span4" id="name-available">
+    <div id="choose-name-div">
+        <h3 id="choose-name">Choose a Folio name</h3>
+        <%= text_field_tag "keyword" %>
+    </div><!-- end of choose-name-div -->
+    
+    <div id="check-avail-button-div">
+        <button id="check-availability" 
+            class="btn btn-primary"
+            data-loading-text="Checking..."
+            data-complete-text="Complete!"
+            data-url="<%= check_availability_folios_path %>">
+            CHECK AVAILABILITY
+        </button>
+    </div><!-- end of check-avail-button-div -->
+    <div id="check-availability-div">
+        <div id='keyword-message'></div><!-- end of message-->
+    </div><!-- end of check-availability-div -->
+</div><!-- end of span4 name-available -->

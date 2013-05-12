@@ -57,7 +57,7 @@ header ul li {
 }
 #content ul {
     list-style-type:none;
-    margin-left:60px;
+    margin-left:30px;
     margin-top:15px;
 }
 
@@ -67,3 +67,8 @@ header ul li {
 #content ul li div input {
      float:left;
 }
+
+#content ul li div label {
+    font-weight: normal
+}
+

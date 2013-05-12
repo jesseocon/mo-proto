@@ -1,0 +1,80 @@
+<div class="span4" id="stripe-form">
+    <div id="credit-card" style="display:block">
+          <div id="credit-card-errors" style="display:none">
+            <div id="stripe-error-message" 
+                class="alert-message block-message error"
+            >
+            </div><!-- end of stripe-error-message-->
+          </div><!-- end of credit-card-errors -->
+          
+          <div class="clearfix">
+              <%= label_tag "name_on_card", "Name on card" %>
+              <div class="input">
+                 <%= text_field_tag :name %> 
+              </div><!-- end of input-->  
+          </div><!-- end of clearfix-->
+          
+          <noscript>
+              <p>This from requires Javascript to use</p>
+          </noscript>
+          
+          <div class='clearfix' id="hiddens">
+              <%= hidden_field_tag :stripe_token %>
+              <%= hidden_field_tag :last_4_digits %>
+          </div><!-- end of clearfix hiddens -->
+          
+          <!-- these fields are disabled before submission  -->
+          <!-- and are never transmitted back to rails -->
+          <div class="clearfix">
+            <%= label_tag :credit_card_number %>
+            <div class="input">
+              <%= text_field_tag :credit_card_number, 
+                params[:credit_card_number], 
+                :class => "field", 
+                :disabled => true 
+              %>
+            </div><!-- end of input -->
+          </div><!-- end of clearfix -->
+
+          <div class="clearfix">
+            <%= label_tag :cvv, "Security code (CVV)" %>
+            <div class="input">
+              <%= text_field_tag :cvv, 
+                params[:cvv], 
+                :class => "small", 
+                :disabled => true 
+              %>
+            </div><!-- end of input-->
+          </div><!-- end of clearfix-->
+
+          <div class="clearfix">
+            <%= label_tag :expiry_date, "Expiration Date" %>
+            <div class="input">
+              <%= date_select "", :expiry_date, 
+                { 
+                    :discard_day => true, 
+                    :order => [:month, :year], 
+                    :use_month_numbers => true, 
+                    :start_year => Date.today.year, 
+                    :end_year => Date.today.year + 25, 
+                    :disabled => true
+                }, 
+                {:class => "small"} 
+              %>
+            </div><!-- end of input-->
+            <!-- empty -->
+          </div><!-- end of clearfix -->
+          
+          <span class="note">
+            Your credit card details will be sent directly 
+            to our payment processor
+          </span>
+          
+          <div class="actions">
+              <%= submit_tag "Purchase", 
+                  class: 'btn btn-primary',
+                  id: 'user_submit'
+              %>
+          </div><!-- end of actions-->
+    </div><!-- end of credit-card -->
+</div><!-- end of span4 stripe-form -->
