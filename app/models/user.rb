@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   attr_accessible :auth_token, :email, :password, :password_confirmation, 
                   :password_digest, :password_reset_at, :password_reset_token, 
                   :verification_token, :verified, :name, :stripe_id,
-                  :last_4_digits, :user_id
+                  :last_4_digits
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }

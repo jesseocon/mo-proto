@@ -6,52 +6,32 @@ class FoliosController < ApplicationController
   def new
     @folio = Folio.new
     @packages = Package.all
-  end
-  
+  end 
+ 
   def create
     @user = current_user
+    @packages = Package.all
     @package = Package.find(params[:package][:id])
-    @amount = (@package.price * 100).to_i
     
-    customer = Stripe::Customer.create(
-      :email      => @user.email,
-      :card       => params[:stripe_token]
-    ) 
-    
-    charge = Stripe::Charge.create(
-      :customer     => customer.id,
-      :amount       => @amount,
-      :description  => "Rails Stripe Customer",
-      :currency     => 'usd'
+    @folio = @user.folios.new(
+      :name           => params[:keyword],
+      :keyword        => params[:keyword],
+      :stripe_token   => params[:stripe_token],
+      :package_price  => (@package.price * 100).to_i,
+      :user_id        => current_user.id,
+      :limit          => @package.photo_qty
     )
-    
-    @folio = Folio.new(
-      :name       => params[:keyword],
-      :keyword    => params[:keyword]
-    )
-    @folio.save
-    
-    @user.update_attributes(
-      :stripe_id      => customer.id,
-      :last_4_digits  => params[:last_4_digits]
-    )
-    
-    @charge = Charge.new(
-      :amount     => @amount, 
-      :user_id    => current_user.id,
-      :package_id => @package.id,
-      :folio_id   => @folio.id
-    )
-    @charge.save
-    
-    url = Folio.register_keyword(params[:keyword])
-    @response = HTTParty.get(url)
-    
-    redirect_to folio_path(@folio)
-    
-  rescue Stripe::CardError => e
+    if @folio.save
+      redirect_to folio_path(@folio)
+    else
+      render :new
+    end
+  rescue Stripe::CardError => e 
     flash[:error] = e.message
-    redirect_to folio_path
+    url = Folio.deregister_keyword(params[:keyword])
+    @response = HTTParty.get(url)
+    puts "***************ERROR MESSAGE#{e.message}"
+    redirect_to root_url
   end
   
   def edit
@@ -63,6 +43,7 @@ class FoliosController < ApplicationController
   end
   
   def show
+    @packages = Package.all
     @folio = Folio.find(params[:id])
   end
   

@@ -39,12 +39,12 @@ $(function() {
 
     Stripe.createToken(card, function(status, response) {
       if (status === 200) {
-        alert(status)
+        alert(status);
         $("#last_4_digits").val(response.card.last4);
         $("#stripe_token").val(response.id);
-        alert($('#stripe_token').val());
         form.submit();
       } else {
+        alert(status);
         $("#stripe-error-message").text(response.error.message);
         $("#credit-card-errors").show();
         $("#user_submit").attr("disabled", false);

@@ -39,7 +39,10 @@
                                 <li>
                                     <div>
                                         <%= radio_button(
-                                            "package", "id", package.id 
+                                            "package", 
+                                            "id", 
+                                            package.id,
+                                            checked: package.id == 3 ? "checked": "" 
                                             ) 
                                         %>
                                         <%= label_tag "#{package.name} - 

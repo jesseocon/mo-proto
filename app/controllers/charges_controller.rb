@@ -1,32 +1,25 @@
 class ChargesController < ApplicationController
   layout 'charges'
   def new
+    @packages = Package.all
   end
   
   def create
     @user = current_user
-    @package = Package.find(params[:package_id])
+    @package = Package.find(params[:package][:id])
     @amount = (@package.price * 100).to_i
-    
-    
-    customer = Stripe::Customer.create(
-      :email    => @user.email,
-      :card     => params[:stripe_token]
-    )
-    
-    charge = Stripe::Charge.create(
-      :customer     => customer.id,
+    @folio = Folio.find(params[:folio_id])
+    @charge = @folio.charges.new(
       :amount       => @amount,
-      :description  => 'Rails Stripe customer',
-      :currency     => 'usd'
+      :user_id      => @user.id,
+      :limit        => @package.photo_qty,
+      :stripe_token => params[:stripe_token]
     )
-    
-    @charge = Charge.new(amount: @amount, user_id: current_user.id)
-    @charge.save
-    @user.update_attributes(
-      stripe_id: customer.id, 
-      last_4_digits: params[:last_4_digits]
-    )
+    if @charge.save
+      redirect_to folio_path(@folio)
+    else
+      render :show
+    end
     
   rescue Stripe::CardError => e
     flash[:error] = e.message

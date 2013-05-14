@@ -11,18 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130512152947) do
+ActiveRecord::Schema.define(:version => 20130514024909) do
 
   create_table "charges", :force => true do |t|
     t.integer  "amount"
     t.integer  "folio_id"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
     t.integer  "package_id"
+    t.string   "stripe_charge_id"
+    t.integer  "limit"
   end
 
   add_index "charges", ["folio_id"], :name => "index_charges_on_folio_id"
+  add_index "charges", ["stripe_charge_id"], :name => "index_charges_on_stripe_charge_id", :unique => true
   add_index "charges", ["user_id"], :name => "index_charges_on_user_id"
 
   create_table "folios", :force => true do |t|

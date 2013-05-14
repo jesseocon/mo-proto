@@ -1,1 +1,168 @@
 <%= @folio.name %>
+
+<%= @folio.limit %>
+
+<!-- Button to trigger purchase modal -->
+<%= link_to(
+        "Order More Photos",
+        "#myModal",
+        {
+            class: 'btn btn-primary',
+            data: {
+                toggle: "modal"
+            }
+        }
+    ) 
+%>
+<!-- End Button to trigger purchase modal -->
+
+<!-- Modal -->
+<div id="myModal" 
+    class="modal hide fade" 
+    tabindex="-1" 
+    role="dialog"
+    aria-labelledby="myModalLabel"
+>
+    <div class="modal-header">
+        <button type="button" 
+            class="close" 
+            data-dismiss="modal" 
+            aria-hidden="true"
+        >
+            x
+        </button>
+        <h3 id="myModalLabel">Modal Header</h3>
+    </div><!-- end of modal-header -->
+    
+    <div class="modal-body">
+        <fieldset>
+            <%= form_tag charges_path do %>
+                <ul id="package-radios">
+                    <% @packages.each do |package| %>
+                    <li>
+                        <div>
+                            <%= radio_button(
+                                "package", 
+                                "id", 
+                                package.id,
+                                checked: package.id == 3 ? "checked": "" 
+                                ) 
+                            %>
+                            <%= label_tag " #{package.price} - 
+                                            #{package.photo_qty} 
+                                            Photos" 
+                            %>
+                        </div>
+                    </li>
+                    <% end %>
+                </ul><!-- end of ul package-radios -->
+                
+                <div class="clearfix" id="hiddens">
+                    <%= hidden_field_tag :stripe_token %>
+                    <%= hidden_field_tag :last_4_digits %>
+                    <%= hidden_field_tag :folio_id, "", value: @folio.id %>
+                </div><!-- end of clearfix hiddens-->
+                <%# ************ START OF STRIPE FORM ************* %>
+                <div id="credit-card" style="display:block;">
+                    
+                    <div id='credit-card-errors' style="display:none;">
+                        <div id="stripe-error-message" 
+                            class="alert-message block-message error"
+                        > 
+                        </div><!-- end of stripe-error-message-->
+                    </div><!-- end of credit-card-errors -->
+                    
+                    <div class="clearfix">
+                        <%= label_tag "name_on_card", "Name on card" %>
+                        <div class="input">
+                            <%= text_field_tag :name %>
+                        </div><!-- end of input-->
+                    </div><!-- end of clearfix -->
+                    
+                    <noscript>
+                        <p>This from requires Javascript to use</p>
+                    </noscript>
+                    
+                    <!-- these fields are disabled before submission  -->
+                    <!-- and are never transmitted back to rails -->
+                    
+                    <div class="clearfix">
+                      <%= label_tag :credit_card_number %>
+                      <div class="input">
+                        <%= text_field_tag :credit_card_number, 
+                          params[:credit_card_number], 
+                          :class => "field", 
+                          :disabled => true 
+                        %>
+                      </div><!-- end of input -->
+                    </div><!-- end of clearfix -->
+                    
+                    <div class="clearfix">
+                      <%= label_tag :cvv, "Security code (CVV)" %>
+                      <div class="input">
+                        <%= text_field_tag :cvv, 
+                          params[:cvv], 
+                          :class => "small", 
+                          :disabled => true 
+                        %>
+                      </div><!-- end of input-->
+                    </div><!-- end of clearfix-->
+                             
+                    <div class="clearfix">
+                      <%= label_tag :expiry_date, "Expiration Date" %>
+                      <div class="input">
+                        <%= date_select "", :expiry_date, 
+                          { 
+                              :discard_day => true, 
+                              :order => [:month, :year], 
+                              :use_month_numbers => true, 
+                              :start_year => Date.today.year, 
+                              :end_year => Date.today.year + 25, 
+                              :disabled => true
+                          }, 
+                          { :class => "small" } 
+                        %>
+                      </div><!-- end of input-->
+                      <!-- empty -->
+                    </div><!-- end of clearfix -->
+                    
+                    <span class="note">
+                      Your credit card details will be sent directly 
+                      to our payment processor
+                    </span>
+
+                    <div class="actions">
+                        <%= submit_tag "Purchase", 
+                            class: 'btn btn-primary',
+                            id: 'user_submit'
+                        %>
+                    </div><!-- end of actions-->
+                </div><!-- end of credit-card-->
+                <%# ############ END OF STRIPE FORM ############## %>
+            <% end %>
+        </fieldset>
+    </div><!-- end of modal-body -->
+    
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">
+            Close
+        </button>
+        <button button class="btn btn-primary">
+            Save changes
+        </button>
+    </div><!-- end of modal-footer-->
+</div><!-- end of myModal-->
+<!-- End Modal -->
+
+
+
+
+
+
+
+
+
+
+
+
+
