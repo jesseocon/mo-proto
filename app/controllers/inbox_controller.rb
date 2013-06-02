@@ -7,8 +7,10 @@ class InboxController < ApplicationController
     ## the if statement so that all messages without
     ## attachments are ignored.  Also add the logic
     ## to create multiple records.
+    puts "***************#{event_payload.user_email}"
     @album = Album.find(event_payload.user_email) rescue nil
     if @album.nil?
+      puts "***********************WHY THE FUCK AM I IN THE NIL CASE?"
      #skip entirely 
     else
       @incoming_message = @album.incoming_messages.new(
