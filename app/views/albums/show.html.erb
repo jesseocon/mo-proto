@@ -1,6 +1,6 @@
 <h1>Folio Name: <%= @album.name %></h1>
 <% @album.incoming_messages.each do |im| %>
-    <li>
+    <div class="span3">
         <%= image_tag(im.photo.url(:original)) %>
-    </li>
+    </div>
 <% end %>
