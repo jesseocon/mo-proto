@@ -5,6 +5,7 @@ class InboxController < ApplicationController
     if attachments = event_payload.attachments.presence
       @album = Album.find_by_album_handle(event_payload.user_email) rescue nil
       if !@album.nil?
+        a1 = attachments.first
         @incoming_message = @album.incoming_messages.new(
           :from => event_payload.user_email,
           :to   => event_payload.recipient_emails.first
