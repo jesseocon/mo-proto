@@ -25,7 +25,7 @@ class InboxController < ApplicationController
       a1.decoded_content
       # => this is the content decoded by Mandrill::Rails, ready to be written as a File or whatever
       # e.g. '%PDF-1.3\n%\xC4\xE5 ... (etc)'
-      @incoming_message.save_asset(a1.name, a1.type, a1.content)
+      @incoming_message.save_photo(a1.name, a1.type, a1.content)
     end
     @incoming_message.save
   end
