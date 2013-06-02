@@ -1,12 +1,15 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
+gem 'aws-sdk', '~> 1.5.7'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'httparty'
 gem 'jquery-rails', '2.0.2'
 gem 'json'
+gem 'mandrill-rails'
 gem 'multi_json'
 gem 'multi_xml'
+gem 'paperclip'
+gem 'rails', '3.2.13'
 gem 'stripe'
 
 group :development, :test do

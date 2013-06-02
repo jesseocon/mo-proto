@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130514024909) do
+ActiveRecord::Schema.define(:version => 20130601211021) do
 
   create_table "charges", :force => true do |t|
     t.integer  "amount"
@@ -38,6 +38,17 @@ ActiveRecord::Schema.define(:version => 20130514024909) do
   end
 
   add_index "folios", ["user_id"], :name => "index_folios_on_user_id"
+
+  create_table "incoming_messages", :force => true do |t|
+    t.string   "from"
+    t.string   "to"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
 
   create_table "messages", :force => true do |t|
     t.datetime "created_at",  :null => false

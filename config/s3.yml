@@ -1,0 +1,16 @@
+development:
+    access_key_id: AKIAJHMXQOUSNJF7N7XQ
+    secret_access_key: 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                  
+    bucket: folioshine-staging
+    
+
+test: 
+    access_key_id: AKIAJHMXQOUSNJF7N7XQ
+    secret_access_key: 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
+    bucket: folioshine-staging
+    
+    
+production: 
+    access_key_id: AKIAJHMXQOUSNJF7N7XQ
+    secret_access_key: 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
+    bucket: folioshine-staging
