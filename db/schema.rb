@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130601211021) do
+ActiveRecord::Schema.define(:version => 20130602042435) do
+
+  create_table "albums", :force => true do |t|
+    t.string   "name"
+    t.string   "album_handle"
+    t.integer  "user_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "albums", ["album_handle"], :name => "index_albums_on_album_handle"
+  add_index "albums", ["name"], :name => "index_albums_on_name"
+  add_index "albums", ["user_id"], :name => "index_albums_on_user_id"
 
   create_table "charges", :force => true do |t|
     t.integer  "amount"
@@ -48,7 +60,10 @@ ActiveRecord::Schema.define(:version => 20130601211021) do
     t.datetime "photo_updated_at"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
+    t.integer  "album_id"
   end
+
+  add_index "incoming_messages", ["album_id"], :name => "index_incoming_messages_on_album_id"
 
   create_table "messages", :force => true do |t|
     t.datetime "created_at",  :null => false

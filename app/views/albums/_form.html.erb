@@ -1,0 +1,9 @@
+<%= form_for @album do |f| %>
+    <%= f.label  :name %>
+    <%= f.text_field :name %>
+    
+    <%= f.hidden_field :user_id %>
+    
+    <%= f.submit %>
+     
+<% end %>

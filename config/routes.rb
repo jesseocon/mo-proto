@@ -10,6 +10,7 @@ MoProto::Application.routes.draw do
   
   root to: "static_pages#home"
   resource :inbox, :controller => 'inbox', :only => [:show,:create]
+  resources :albums
   resources :messages
   resources :password_resets
   resources :folios do

@@ -1,0 +1,6 @@
+<h1>Folio Name: <%= @album.name %></h1>
+<% @album.incoming_messages.each do |im| %>
+    <li>
+        <%= im.photo_file_name %>
+    </li>
+<% end %>
