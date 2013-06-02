@@ -11,7 +11,7 @@ class InboxController < ApplicationController
         )
         @incoming_message.save_photo(a1.name, a1.type, a1.content)
         @incoming_message.save
-      
+      end
     end
   end
   
