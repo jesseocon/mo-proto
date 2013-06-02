@@ -8,7 +8,7 @@ class InboxController < ApplicationController
     ## attachments are ignored.  Also add the logic
     ## to create multiple records.
     puts "***************#{event_payload.user_email}"
-    @album = Album.find(event_payload.user_email) rescue nil
+    @album = Album.find_by_album_handle(event_payload.user_email) rescue nil
     if @album.nil?
       puts "***********************WHY THE FUCK AM I IN THE NIL CASE?"
      #skip entirely 
