@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'aws-sdk', '~> 1.5.7'
 gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'cocaine', '0.3.2'
 gem 'httparty'
 gem 'jquery-rails', '2.0.2'
 gem 'json'
