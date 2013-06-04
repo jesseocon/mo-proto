@@ -11,8 +11,8 @@ class IncomingMessage < ActiveRecord::Base
     def save_photo(name, type, data)
       self.photo = Paperclip::string_to_file(name, type, data)
       dimensions = Paperclip::Geometry.from_file(self.photo.queued_for_write[:original].path)
-      @width = dimensions.width
-      @height = dimensions.height
+      self.width = dimensions.width
+      self.height = dimensions.height
     end
     
   
