@@ -1,6 +1,6 @@
 class Permission < Struct.new(:user)
   def initialize(user)
-    allow :albums,          [:index, :new, :create, :edit, :update, :show, :destroy]
+    allow :albums,          [:index, :new, :create, :edit, :update, :show, :destroy, :get_pics]
     allow :folios,          [:index, :new, :create, :show, :destroy, :check_availability, :register_keyword, :deregister_keyword]
     allow :messages,        [:index, :new, :create, :edit, :update, :show, :destroy]
     allow :password_resets, [:new, :create, :edit, :update]
