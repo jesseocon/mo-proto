@@ -35,6 +35,13 @@ class AlbumsController < ApplicationController
     @album.destroy
   end
   
+  def get_pics
+    @pics = @album.photos
+    respond_to do |format|
+      format.json { render :json => @pics }
+    end
+  end
+  
   private
     def find_album
       @album = Album.find(params[:id])
