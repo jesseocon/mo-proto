@@ -9,6 +9,7 @@ class IncomingMessage < ActiveRecord::Base
     
     def save_photo(name, type, data)
       self.photo = Paperclip::string_to_file(name, type, data)
+      puts "**************PHOTO WIDTH#{Paperclip::Geometry.from_file(self.photo).width}"
     end
     
   
