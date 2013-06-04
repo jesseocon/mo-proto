@@ -4,7 +4,7 @@ class InboxController < ApplicationController
   def handle_inbound(event_payload)
     puts "HITTING THE CONTROLLER"
     if attachments = event_payload.attachments.presence && IncomingMessage::ACCEPTABLE_FILETYPES.include?(event_payload.attachments.first.type)
-      attachments = event_payload.attachments.first
+      attachments = event_payload.attachments
       @album = Album.find_by_album_handle(event_payload.user_email) rescue nil
       if !@album.nil?
         a1 = attachments.first
