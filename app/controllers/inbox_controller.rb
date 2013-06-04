@@ -12,6 +12,7 @@ class InboxController < ApplicationController
           :from => event_payload.user_email,
           :to   => event_payload.recipient_emails.first
         )
+        puts "************CONTENT TYPE#{a1.content}"
         @incoming_message.save_photo(a1.name, a1.type, a1.content)
         @incoming_message.save
       end
