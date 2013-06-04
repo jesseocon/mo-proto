@@ -36,7 +36,7 @@ class AlbumsController < ApplicationController
   end
   
   def get_pics
-    @pics = @album.photos
+    @pics = @album.incoming_messages
     respond_to do |format|
       format.json { render :json => @pics }
     end
