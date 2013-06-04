@@ -2,7 +2,9 @@ class InboxController < ApplicationController
   include Mandrill::Rails::WebHookProcessor
   
   def handle_inbound(event_payload)
+    puts "HITTING THE CONTROLLER"
     if attachments = event_payload.attachments.presence
+      puts "HAS ATTACHMENTS"
       @album = Album.find_by_album_handle(event_payload.user_email) rescue nil
       if !@album.nil?
         a1 = attachments.first
