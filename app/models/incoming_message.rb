@@ -8,6 +8,8 @@ class IncomingMessage < ActiveRecord::Base
     :s3_credentials => "#{Rails.root}/config/s3.yml",
     :path => ":attachment/:id/:style.:extension"
     
+  ACCEPTABLE_FILETYPES = ["image/jpeg", "image/png"]
+    
     def save_photo(name, type, data)
       self.photo = Paperclip::string_to_file(name, type, data)
       dimensions = Paperclip::Geometry.from_file(self.photo.queued_for_write[:original].path)
