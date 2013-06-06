@@ -15,6 +15,10 @@ class IncomingMessage < ActiveRecord::Base
       dimensions = Paperclip::Geometry.from_file(self.photo.queued_for_write[:original].path)
       self.width = dimensions.width
       self.height = dimensions.height
-    end 
+    end
+    
+    def photo_url
+      self.photo[:original].url
+    end
   
 end
