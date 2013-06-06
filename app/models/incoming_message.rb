@@ -1,6 +1,7 @@
 class IncomingMessage < ActiveRecord::Base
   attr_accessible :from, :photo_content_type, :photo_file_name, :photo_file_size, 
-                  :photo_updated_at, :width, :height, 
+                  :photo_updated_at, :width, :height,
+  attr_reader :photo_url 
   belongs_to :album
   after_initalize :photo_url
   
@@ -19,7 +20,7 @@ class IncomingMessage < ActiveRecord::Base
     end
     
     def photo_url
-      self.photo.url
+      self.photo_url = self.photo.url
     end
   
 end
