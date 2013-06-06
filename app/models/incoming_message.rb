@@ -20,7 +20,7 @@ class IncomingMessage < ActiveRecord::Base
     end
     
     def photo_url
-      self.photo_url = self.photo.url
+      self.photo.url
     end
   
 end
