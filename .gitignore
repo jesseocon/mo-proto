@@ -13,3 +13,16 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+app/assets/javascripts/photoMosaic/files/data/.DS_Store
+app/assets/javascripts/photoMosaic/docs/.DS_Store
+app/assets/javascripts/photoMosaic/files/.DS_Store
+app/assets/javascripts/photoMosaic/files/css/.DS_Store
+app/assets/javascripts/photoMosaic/files/images/.DS_Store
+app/assets/javascripts/photoMosaic/files/includes/.DS_Store
+app/assets/javascripts/photoMosaic/files/js/.DS_Store
+.DS_Store
+app/.DS_Store
+app/assets/.DS_Store
+app/assets/images/.DS_Store
+app/assets/javascripts/.DS_Store
+app/assets/javascripts/photoMosaic/.DS_Store
