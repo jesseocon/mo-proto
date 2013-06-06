@@ -29,6 +29,7 @@ class AlbumsController < ApplicationController
   end
   
   def show
+    render :layout => 'grid_layout'
   end
   
   def destroy
