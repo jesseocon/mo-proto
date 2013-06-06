@@ -21,7 +21,7 @@ var PMalbum = [
         height: "322"
     },
     {
-        src: "/images/imgs/lumpini-park-lights.jpg",
+        src: "/images/lumpini-park-lights.jpg",
         caption: "'Lumpini Park Lights' - By Mike Behnken (mikebehnken @ flickr)",
         url: "http://www.flickr.com/photos/mikebehnken/5072537190/"
     },
@@ -36,7 +36,7 @@ var PMalbum = [
         url: "http://www.flickr.com/photos/pagedooley/3121844717/"
     },
     {
-        src: "/images/mammoths.jpg",
+        src: "images/mammoths.jpg",
         caption: "'mammoths' - By paul (dex) [dexxus @  flickr]",
         url: "http://www.flickr.com/photos/dexxus/3017515135/"
     },
@@ -51,17 +51,17 @@ var PMalbum = [
         url: "http://www.flickr.com/photos/gadl/456185679/"
     },
     {
-        src: "/images/imgs/koyaanisqatsi-patchwork.jpg",
+        src: "/images/koyaanisqatsi-patchwork.jpg",
         caption: "'koyaanisqatsi patchwork' - By alvazer (alvazer @ flickr)",
         url: "http://www.flickr.com/photos/alvazer/117400518/"
     },
     {
-        src: "/images/imgs/living-off-the-land.jpg",
+        src: "/images/living-off-the-land.jpg",
         caption: "'Living Off the Land' - By MikeBehnken (mikebehnken @ flickr)",
         url: "http://www.flickr.com/photos/mikebehnken/5164203648/"
     },
     {
-        src: "/images/imgs/water-tower-perspective.jpg",
+        src: "/images/water-tower-perspective.jpg",
         caption: "'water tower perspective' - By Paulo Brandão (paulobrandao @ flickr)",
         url: "http://www.flickr.com/photos/paulobrandao/2733141192/"
     }

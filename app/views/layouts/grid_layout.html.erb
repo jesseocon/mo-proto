@@ -8,13 +8,14 @@
       <%= csrf_meta_tags %>
       
       <!-- include Lightbox (optional) -->
-      <link href="photoMosaic/files/includes/prettyPhoto/prettyPhoto.css" rel="stylesheet" type="text/css" />
-      <script src="photoMosaic/files/includes/prettyPhoto/jquery.prettyPhoto.js" type="text/javascript"></script>
+      <%= stylesheet_link_tag "photoMosaic/files/includes/prettyPhoto/prettyPhoto.css" %>
+      <%= javascript_include_tag "photoMosaic/files/includes/prettyPhoto/jquery.prettyPhoto.js" %>
       
       <!-- include PhotoMosaic -->
-      <script src="photoMosaic/files/data/photoMosaic.data.js" type="text/javascript"></script>
-      <link href="photoMosaic/files/css/photoMosaic.css" rel="stylesheet" type="text/css" />
-      <script src="photoMosaic/files/js/jquery.photoMosaic.js" type="text/javascript"></script>
+      <%= javascript_include_tag "photoMosaic/files/data/photoMosaic.data.js" %>
+      <%= stylesheet_link_tag "photoMosaic/files/css/photoMosaic.css" %>
+      <%= javascript_include_tag "photoMosaic/files/js/jquery.photoMosaic.js" %>
+      
       <script type="text/javascript">
           $(document).ready(function(){
 
@@ -51,6 +52,7 @@
     </head>
     <body>
         <div id="container">
+            
             <div id="target">
 
             <!--  This is the way you would construct your gallery for {input:'html'}
