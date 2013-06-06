@@ -1,7 +1,6 @@
 class IncomingMessage < ActiveRecord::Base
   attr_accessible :from, :photo_content_type, :photo_file_name, :photo_file_size, 
-                  :photo_updated_at, :width, :height
-  attr_accessor :photo_url 
+                  :photo_updated_at, :width, :height 
   
   belongs_to :album
   
