@@ -19,7 +19,7 @@
       <script type="text/javascript">
           $(document).ready(function(){
 
-              $('#target').photoMosaic({
+              /*$('#target').photoMosaic({
                   // input examples
                       input: 'json',
                       gallery: PMalbum, // var PMalbum is defined in data/photoMosaic.data.js
@@ -41,6 +41,18 @@
                               show_title: false
                           });
                       }
+              });*/
+              
+              $.ajax({
+                 url: '/albums/1/get_pics.json',
+                 type: 'GET', 
+              }).done(function(data){
+                 var AMalbum = data;
+                 
+                 $('#target').mosaic({
+                     input: 'json',
+                     gallery: AMalbum
+                 });
               });
 
           });
