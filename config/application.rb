@@ -42,7 +42,10 @@ module MoProto
     # Enable escaping HTML in JSON.
     config.active_support.escape_html_entities_in_json = true
     
-    config.assets.precompile += ['photoMosaic/files/includes/prettyPhoto/prettyPhoto.css'] ######## ADD THE REST OF THE FILE NAMES
+    config.assets.precompile += [
+      'photoMosaic/files/includes/prettyPhoto/prettyPhoto.css',
+      'photoMosaic/files/includes/prettyPhoto/jquery.prettyPhoto.js'
+    ] ######## ADD THE REST OF THE FILE NAMES
 
     # Use SQL instead of Active Record's schema dumper when creating the database.
     # This is necessary if your schema can't be completely dumped by the schema dumper,
