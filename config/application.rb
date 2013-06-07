@@ -44,7 +44,10 @@ module MoProto
     
     config.assets.precompile += [
       'photoMosaic/files/includes/prettyPhoto/prettyPhoto.css',
-      'photoMosaic/files/includes/prettyPhoto/jquery.prettyPhoto.js'
+      'photoMosaic/files/includes/prettyPhoto/jquery.prettyPhoto.js',
+      'photoMosaic/files/data/photoMosaic.data.js',
+      'photoMosaic/files/css/photoMosaic.css',
+      'photoMosaic/files/js/jquery.photoMosaic.js'
     ] ######## ADD THE REST OF THE FILE NAMES
 
     # Use SQL instead of Active Record's schema dumper when creating the database.
