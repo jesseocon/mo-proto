@@ -51,7 +51,19 @@
                  
                  $('#target').photoMosaic({
                      input: 'json',
-                     gallery: AMalbum
+                     gallery: AMalbum,
+                     
+                     modal_name: 'prettyPhoto',
+                     modal_ready_callback: function($pm) {
+                         $('a[rel^="prettyPhoto"]', $pm).prettyPhoto({
+                             overlay_gallery: false,
+                             slideshow: false,
+                             theme: "pp_default",
+                             deeplinking: false,
+                             social_tools: "",
+                             show_title: false
+                     }
+                     
                  });
               });
 
