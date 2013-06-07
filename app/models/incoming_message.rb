@@ -18,8 +18,12 @@ class IncomingMessage < ActiveRecord::Base
       self.height = dimensions.height
     end
     
-    def photo_url
+    def src
       self.photo.url
+    end
+    
+    def caption
+      return "caption"
     end
   
 end
