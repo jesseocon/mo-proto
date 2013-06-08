@@ -3,7 +3,7 @@ $(document).ready(function(){
         minTileWidth: 180,
         margin: 30,
         gridCellSize: 20,
-		autoLoadURL: 'ajax-content.html',
+		autoLoadURL: '/albums/1/get_html_pics',
 		autoLoadOffset: 100,
 		onUpdate: function () {
 			
