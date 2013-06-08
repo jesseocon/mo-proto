@@ -45,6 +45,14 @@ class AlbumsController < ApplicationController
     end
   end
   
+  def get_html_pics
+    page = params[:page].to_i
+    per_page = 10
+    offset = (per_page * (page - 1)) + 1
+    @pics = @album.incoming_messages.offset(offset).limit(per_page)
+    layout false
+  end
+  
   private
     def find_album
       @album = Album.find(params[:id])
