@@ -14,6 +14,9 @@ MoProto::Application.routes.draw do
     member do 
       get 'get_pics'
     end
+    member do 
+      get 'get_html_pics'
+    end
   end
   resources :messages
   resources :password_resets
