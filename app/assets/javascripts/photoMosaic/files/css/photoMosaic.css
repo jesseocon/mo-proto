@@ -14,7 +14,7 @@
 
 /* selective reset */
 .photoMosaic img, .photoMosaic a:link, .photoMosaic a:visited, .photoMosaic a:active, .photoMosaic a:hover {
-    margin:0 !important; padding:0 !important;
+    margin:0 !important; padding:0 !important; border:2px solid white;
 }
 
 /* base */
