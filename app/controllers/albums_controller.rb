@@ -51,7 +51,7 @@ class AlbumsController < ApplicationController
     per_page = 10
     offset = (per_page * (page - 1)) + 1
     @pics = @album.incoming_messages.offset(offset).limit(per_page)
-    layout false
+    render :layout => false
   end
   
   private
