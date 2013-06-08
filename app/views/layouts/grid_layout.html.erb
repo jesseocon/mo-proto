@@ -52,7 +52,7 @@
                  $('#target').photoMosaic({
                      input: 'json',
                      gallery: AMalbum,
-                     
+                     prevent_crop: true,
                      modal_name: 'prettyPhoto',
                      modal_ready_callback: function($pm) {
                          $('a[rel^="prettyPhoto"]', $pm).prettyPhoto({
