@@ -46,6 +46,7 @@ class AlbumsController < ApplicationController
   end
   
   def get_html_pics
+    @album = Album.find(params[:id])
     page = params[:page].to_i
     per_page = 10
     offset = (per_page * (page - 1)) + 1
