@@ -51,7 +51,7 @@ class AlbumsController < ApplicationController
     page = params[:page].to_i
     per_page = 10
     offset = (per_page * (page - 1)) + 1
-    @pics = @album.incoming_messages.offset(offset).limit(per_page)
+    @pics = @album.incoming_messages.order('id ASC').offset(offset).limit(per_page)
     render :layout => false
   end
   
