@@ -1,5 +1,5 @@
 class AlbumsController < ApplicationController
-  before_filter :find_album, only: [:edit, :update, :show, :destroy, :get_pics]
+  before_filter :find_album, only: [:edit, :update, :show, :destroy, :get_pics, :get_html_pics]
   
   def index
     render :layout => 'grid_layout'
@@ -31,7 +31,9 @@ class AlbumsController < ApplicationController
   end
   
   def show
-    render :layout => 'grid_layout'
+    #render :layout => 'grid_layout'
+    @pics = @album.incoming_messages.order('id ASC').limit(10)
+    render :layout => 'final_tiles'
   end
   
   def destroy
@@ -46,7 +48,6 @@ class AlbumsController < ApplicationController
   end
   
   def get_html_pics
-    @album = Album.find(params[:id])
     page = params[:page].to_i
     per_page = 10
     offset = (per_page * (page - 1)) + 1

@@ -1,6 +1,6 @@
-<h1>Folio Name: <%= @album.name %></h1>
-<% @album.incoming_messages.each do |im| %>
-    <div class="span3">
-        <%= image_tag(im.photo.url(:original)) %>
-    </div>
+<% @pics.each do |pic| %>
+    <article class="tile ftg-set-1">
+        <%= link_to image_tag(pic.photo.url, class: 'item') %>
+        <p>Caption</p>
+    </article>
 <% end %>
