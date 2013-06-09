@@ -18,6 +18,24 @@ $(document).ready(function(){
 			    height:"75%", 
 			    scalePhotos: true
 			});
+			
+			$('.tile').on('mouseenter', function(){
+                $(this).children().children('div.new-thing').addClass('display-some');
+            });
+
+            $('.tile').on('mouseleave', function(){
+                $(this).children().children('div.new-thing').removeClass('display-some');
+            });
+			
+			
 		}
+    });
+    
+    $('.tile').on('mouseenter', function(){
+        $(this).children().children('div.new-thing').addClass('display-some');
+    });
+
+    $('.tile').on('mouseleave', function(){
+        $(this).children().children('div.new-thing').removeClass('display-some');
     });
 });
