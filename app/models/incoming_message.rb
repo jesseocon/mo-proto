@@ -3,6 +3,7 @@ class IncomingMessage < ActiveRecord::Base
                   :photo_updated_at, :width, :height 
   
   belongs_to :album
+  has_many :stars
   
   has_attached_file :photo, 
     :storage => :s3, 
