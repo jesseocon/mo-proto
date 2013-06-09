@@ -33,6 +33,7 @@ class AlbumsController < ApplicationController
   def show
     #render :layout => 'grid_layout'
     @pics = @album.incoming_messages.order('id ASC').limit(10)
+    @current_user = current_user
     render :layout => 'final_tiles'
   end
   
@@ -59,4 +60,5 @@ class AlbumsController < ApplicationController
     def find_album
       @album = Album.find(params[:id])
     end
+    
 end

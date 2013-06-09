@@ -4,7 +4,7 @@
             <%= image_tag(pic.photo.url, class: 'item') %>
             <div class="new-thing" 
                 data-star-url="<%= stars_path %>.json"
-                data-uid="<%= current_user.id %>"
+                data-uid="<%= @current_user.id %>"
                 data-imid="<%= pic.id %>">
                 Thing
             </div>
