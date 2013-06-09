@@ -1,13 +1,13 @@
 development:
     access_key_id: AKIAJHMXQOUSNJF7N7XQ
     secret_access_key: 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                  
-    bucket: folioshine-staging
+    bucket: folioshine-production
     
 
 test: 
     access_key_id: AKIAJHMXQOUSNJF7N7XQ
     secret_access_key: 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
-    bucket: folioshine-staging
+    bucket: folioshine-production
     
     
 production: 

@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    $("tile a").colorbox();
     $("#final-tg").finalTilesGallery({
         minTileWidth: 180,
         margin: 30,
@@ -10,7 +11,7 @@ $(document).ready(function(){
 			//Example: update ColorBox
 			//$(".tile a").colorbox();
 			
-			$(".tile a").colorbox({rel:'group2', transition:"fade"});
+			$(".tile a").colorbox();
 		}
     });
 });
