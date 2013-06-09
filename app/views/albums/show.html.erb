@@ -2,7 +2,10 @@
     <article id="article<%= pic.id %>" class="tile ftg-set-1">
         <%= link_to pic.photo.url do  %>
             <%= image_tag(pic.photo.url, class: 'item') %>
-            <div class="new-thing">
+            <div class="new-thing" 
+                data-star-url="<%= stars_path %>.json"
+                data-uid="<%= current_user.id %>"
+                data-imid="<%= pic.id %>">
                 Thing
             </div>
             <div class="caption">

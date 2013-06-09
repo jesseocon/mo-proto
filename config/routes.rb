@@ -29,6 +29,7 @@ MoProto::Application.routes.draw do
     end
   end
   resources :sessions
+  resources :stars
   resources :users
   resources :verifications
   resources :packages
