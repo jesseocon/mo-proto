@@ -43,11 +43,6 @@ module MoProto
     config.active_support.escape_html_entities_in_json = true
     
     config.assets.precompile += [
-      'photoMosaic/files/includes/prettyPhoto/prettyPhoto.css',
-      'photoMosaic/files/includes/prettyPhoto/jquery.prettyPhoto.js',
-      'photoMosaic/files/data/photoMosaic.data.js',
-      'photoMosaic/files/css/photoMosaic.css',
-      'photoMosaic/files/js/jquery.photoMosaic.js',
       'final_tiles/jquery.finalTilesGallery.js',
       'final_tiles/vendor/modernizr-2.6.2.min.js',
       'colorbox/jquery.colorbox-min.js'
