@@ -8,7 +8,9 @@ $(document).ready(function(){
 		onUpdate: function () {
 			
 			//Example: update ColorBox
-			$(".tile a").colorbox();
+			//$(".tile a").colorbox();
+			
+			$(".tile a").colorbox({rel:'group2', transition:"fade"});
 		}
     });
 });
