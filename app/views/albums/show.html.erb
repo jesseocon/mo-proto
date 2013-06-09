@@ -2,7 +2,10 @@
     <article class="tile ftg-set-1">
         <%= link_to pic.photo.url do  %>
             <%= image_tag(pic.photo.url, class: 'item') %>
-            <div class="caption"><p>Test captionCaption</p></div>
+            <div class="caption">
+                <p>Test caption</p>
+                <p>This is another caption</p>
+            </div>
         <% end %>  
     </article>
 <% end %>
