@@ -11,7 +11,13 @@ $(document).ready(function(){
 			//Example: update ColorBox
 			//$(".tile a").colorbox();
 			
-			$(".tile a").colorbox({rel:'tile', transition:"fade", width:"75%", height:"75%"});
+			$(".tile a").colorbox({
+			    rel:'tile', 
+			    transition:"fade", 
+			    width:"75%", 
+			    height:"75%", 
+			    scalePhotos: true
+			});
 		}
     });
 });
