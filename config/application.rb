@@ -49,7 +49,8 @@ module MoProto
       'photoMosaic/files/css/photoMosaic.css',
       'photoMosaic/files/js/jquery.photoMosaic.js',
       'final_tiles/jquery.finalTilesGallery.js',
-      'final_tiles/vendor/modernizr-2.6.2.min.js'
+      'final_tiles/vendor/modernizr-2.6.2.min.js',
+      'colorbox/jquery.colorbox-min.js'
     ] ######## ADD THE REST OF THE FILE NAMES
 
     # Use SQL instead of Active Record's schema dumper when creating the database.

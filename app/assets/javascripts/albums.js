@@ -8,7 +8,7 @@ $(document).ready(function(){
 		onUpdate: function () {
 			
 			//Example: update ColorBox
-			//$(".tile a").colorbox();
+			$(".tile a").colorbox();
 		}
     });
 });
