@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130604055108) do
+ActiveRecord::Schema.define(:version => 20130609223510) do
 
   create_table "albums", :force => true do |t|
     t.string   "name"
@@ -85,6 +85,17 @@ ActiveRecord::Schema.define(:version => 20130604055108) do
     t.datetime "created_at",                               :null => false
     t.datetime "updated_at",                               :null => false
   end
+
+  create_table "stars", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "incoming_message_id"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+  end
+
+  add_index "stars", ["incoming_message_id"], :name => "index_stars_on_incoming_message_id"
+  add_index "stars", ["user_id", "incoming_message_id"], :name => "index_stars_on_user_id_and_incoming_message_id", :unique => true
+  add_index "stars", ["user_id"], :name => "index_stars_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email"
