@@ -1,7 +1,9 @@
 <% @pics.each do |pic| %>
     <article class="tile ftg-set-1">
-        <%= link_to image_tag(pic.photo.url, class: 'item') %>
-        <p>Caption</p>
+        <%= link_to '#' do  %>
+            <%= image_tag(pic.photo.url, class: 'item') %>
+            <div class="caption"><p>Test captionCaption</p></div>
+        <% end %>  
     </article>
 <% end %>
 
