@@ -26,6 +26,8 @@ $(document).ready(function(){
             $('.tile').on('mouseleave', function(){
                 $(this).children().children('div.new-thing').removeClass('display-some');
             });
+            
+            $('div.new-thing').overlayify();
 			
 			
 		}
@@ -38,4 +40,22 @@ $(document).ready(function(){
     $('.tile').on('mouseleave', function(){
         $(this).children().children('div.new-thing').removeClass('display-some');
     });
+    
+    $('div.new-thing').overlayify();
 });
+
+(function ( $ ) {
+    $.fn.overlayify = function(options){
+        return this.each(function() {
+            
+            
+            $(this).on('click', function(e){
+                e.stopPropagation();
+                e.preventDefault();
+                //$(this).parent().removeClass('cboxElement');
+                $(this).removeClass('cboxElement');
+            });
+        });
+    }
+
+})(jQuery);
