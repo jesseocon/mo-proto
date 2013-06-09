@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $("tile a").colorbox();
+    $(".tile a").colorbox();
     $("#final-tg").finalTilesGallery({
         minTileWidth: 180,
         margin: 30,
