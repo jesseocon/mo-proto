@@ -1,5 +1,5 @@
 <% @pics.each do |pic| %>
-    <article class="tile ftg-set-1">
+    <article id="article<%= pic.id %>" class="tile ftg-set-1">
         <%= link_to pic.photo.url do  %>
             <%= image_tag(pic.photo.url, class: 'item') %>
             <div class="new-thing">
