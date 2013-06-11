@@ -9,7 +9,8 @@
             <div class="new-thing"
                 data-star-url="<%= stars_path %>.json"
                 data-uid="<%= @current_user.id %>"
-                data-imid="<%= pic.id %>">
+                data-imid="<%= pic.id %>"
+                id="star_<%= pic.id %>">
                     <% if pic.stars.any? %>
                         <%= image_tag('StarBlue.png') %>
                     <% else %>
