@@ -43,7 +43,7 @@ $(document).ready(function(){
                     },
                     dataType: 'json',
                     success: function(data){
-                        $(id+' img').attr('src', '/assets/StarWhite.png');
+                        $(id+' img').attr('src', '/assets/StarBlue.png');
                         console.log('it worked');
                     },
                     error: function(data) {
@@ -83,7 +83,7 @@ $(document).ready(function(){
             },
             dataType: 'json',
             success: function(data){
-                $(id+' img').attr('src', '/assets/StarWhite.png');
+                $(id+' img').attr('src', '/assets/StarBlue.png');
                 console.log('it worked');
             },
             error: function(data) {
