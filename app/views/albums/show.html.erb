@@ -13,7 +13,9 @@
                 data-uid="<%= @current_user.id %>"
                 data-imid="<%= pic.id %>">
                     <% if pic.stars.any? %>
-                       <%= image_tag('StarBlue.png') %> 
+                       <%= image_tag('StarBlue.png') %>
+                   <% else %>
+                       <%= image_tag('StarWhite.png') %> 
                     <% end %>
             </div>
             <div class="caption">

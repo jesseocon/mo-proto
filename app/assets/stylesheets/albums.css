@@ -57,7 +57,6 @@ html { font-family: Arial, sans-serif; background: #111; }
     position:absolute;
     top: 0;
     left: 0;
-    background: blue;
     color: blue;
     z-index: 5000;
     display:none;
