@@ -8,9 +8,6 @@ $(document).ready(function(){
 		autoLoadOffset: 100,
 		onUpdate: function () {
 			
-			//Example: update ColorBox
-			//$(".tile a").colorbox();
-			
 			$(".tile a").colorbox({
 			    rel:'tile', 
 			    transition:"fade", 
@@ -46,7 +43,7 @@ $(document).ready(function(){
                     },
                     dataType: 'json',
                     success: function(data){
-                        $(id+' img').attr('src', /assets/StarWhite.png);
+                        $(id+' img').attr('src', '/assets/StarWhite.png');
                         console.log('it worked');
                     },
                     error: function(data) {
@@ -86,7 +83,7 @@ $(document).ready(function(){
             },
             dataType: 'json',
             success: function(data){
-                $(id+' img').attr('src', /assets/StarWhite.png);
+                $(id+' img').attr('src', '/assets/StarWhite.png');
                 console.log('it worked');
             },
             error: function(data) {
