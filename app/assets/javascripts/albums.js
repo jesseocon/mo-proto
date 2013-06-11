@@ -28,6 +28,30 @@ $(document).ready(function(){
             });
             
             $('div.new-thing').overlayify();
+            
+            $('div.new-thing').click(function(){
+                var userId             = $(this).data('uid'),
+                    incomingMessageId = $(this).data('imid'),
+                    path                = $(this).data('star-url');
+
+                $.ajax({
+                    type: 'POST',
+                    url: path,
+                    data: {
+                      star: { 
+                        user_id: userId,
+                        incoming_message_id: incomingMessageId
+                      }  
+                    },
+                    dataType: 'json',
+                    success: function(data){
+                        console.log('it worked');
+                    },
+                    error: function(data) {
+                        console.log("it didn't work");
+                    }
+                });
+            });
 			
 			
 		}
@@ -42,6 +66,30 @@ $(document).ready(function(){
     });
     
     $('div.new-thing').overlayify();
+    
+    $('div.new-thing').click(function(){
+        var userId             = $(this).data('uid'),
+            incomingMessageId = $(this).data('imid'),
+            path                = $(this).data('star-url');
+
+        $.ajax({
+            type: 'POST',
+            url: path,
+            data: {
+              star: { 
+                user_id: userId,
+                incoming_message_id: incomingMessageId
+              }  
+            },
+            dataType: 'json',
+            success: function(data){
+                console.log('it worked');
+            },
+            error: function(data) {
+                console.log("it didn't work");
+            }
+        });
+    });
 });
 
 (function ( $ ) {
