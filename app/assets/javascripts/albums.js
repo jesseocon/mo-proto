@@ -32,7 +32,8 @@ $(document).ready(function(){
             $('div.new-thing').click(function(){
                 var userId             = $(this).data('uid'),
                     incomingMessageId = $(this).data('imid'),
-                    path                = $(this).data('star-url');
+                    path                = $(this).data('star-url'),
+                    id                  = '#'+ $(this).attr('id');
 
                 $.ajax({
                     type: 'POST',
