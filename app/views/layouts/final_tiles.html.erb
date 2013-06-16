@@ -10,11 +10,10 @@
       <!-- include finalTiles -->
       <%= javascript_include_tag "final_tiles/jquery.finalTilesGallery.js" %>
     </head>
+    <%= render 'layouts/header' %>
     <body>
-        <section id="final-tg">
-            <div class="ftg-items">
-                <%= yield %>
-            </div>
-        </section><!-- end of final-tg-->
+        <div class=>
+            <%= yield %>
+        </div><!-- end of container-->
     </body>
 </html>

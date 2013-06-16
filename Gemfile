@@ -12,6 +12,7 @@ gem 'multi_xml'
 gem 'paperclip'
 gem 'rails', '3.2.13'
 gem 'stripe'
+gem 'taps'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'

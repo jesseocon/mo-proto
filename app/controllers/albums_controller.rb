@@ -33,6 +33,7 @@ class AlbumsController < ApplicationController
   def show
     #render :layout => 'grid_layout'
     @pics = @album.incoming_messages.order('id ASC').limit(10)
+    @all_pics = @album.incoming_messages.count
     @current_user = current_user
     render :layout => 'final_tiles'
   end
