@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   has_secure_password
   has_many :charges
   has_many :folios
+  has_many :albums
+  has_many :invitations, :foreign_key => "user_email"
   attr_accessible :auth_token, :email, :password, :password_confirmation, 
                   :password_digest, :password_reset_at, :password_reset_token, 
                   :verification_token, :verified, :name, :stripe_id,

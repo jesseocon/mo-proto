@@ -1,5 +1,7 @@
 require 'spec_helper'
 
 describe Album do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before { @user = User.new(email: 'jesseocon@gmail.com', )}
+  before { @album = Album.new(name: jesse, user_id: 7 ) }
+  subject { @album }
 end
