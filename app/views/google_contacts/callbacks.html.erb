@@ -1,0 +1,8 @@
+Hi Thanks for making it back!  Here are your contacts.
+
+<ul>
+    <% @contacts.each do |contact| %>
+        <li><%= contact["name"] %> | <%= contact["email"] %></li>
+    <% end %> 
+</ul>
+

@@ -10,6 +10,7 @@ class Permission < Struct.new(:user)
     allow :verifications,   [:show]
     allow :charges,         [:new, :create]
     allow :inbox,           [:show, :create]
+    allow :google_contacts, [:show, :callbacks, :get_client, :get_contacts]
     if user
       allow :users, [:show]
       allow :users, [:edit, :update, :destroy] do |u|

@@ -8,6 +8,10 @@ MoProto::Application.routes.draw do
   get 'login',      to: 'sessions#new',       as: 'login'
   delete 'logout',  to: 'sessions#destroy',   as: 'logout'
   
+  get 'callbacks',       to: 'google_contacts#callbacks',     as: 'callbacks'
+  get 'get_client',      to: 'google_contacts#get_client',    as: 'get_client'
+  get 'get_contacts',    to: 'google_contacts#get_contacts',  as: 'get_contacts'
+  
   root to: "static_pages#home"
   resource :inbox, :controller => 'inbox', :only => [:show,:create]
   resources :albums do 
@@ -34,6 +38,7 @@ MoProto::Application.routes.draw do
   resources :verifications
   resources :packages
   resources :charges
+  resources :google_contacts
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

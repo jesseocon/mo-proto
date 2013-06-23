@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   has_many :folios
   has_many :albums
   has_many :invitations, :foreign_key => "user_email"
+  has_many :contacts
   attr_accessible :auth_token, :email, :password, :password_confirmation, 
                   :password_digest, :password_reset_at, :password_reset_token, 
                   :verification_token, :verified, :name, :stripe_id,

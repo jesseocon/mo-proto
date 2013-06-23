@@ -23,10 +23,11 @@ class Invitation < ActiveRecord::Base
     end
   end
   
-  def send_invitations(album_id, emails)
-    Invitations.where(album_id: album_id)
+  def self.send_invitations(album_id)
+    invitations = Invitations.where(album_id: album_id)
+    invitations.each do |invitation|
+      invitation.send
+    end
   end
-  
-  
   
 end

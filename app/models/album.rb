@@ -10,4 +10,5 @@ class Album < ActiveRecord::Base
   def make_handle
     self.album_handle = "#{self.name}@inbound.folioshine.com"
   end
+
 end

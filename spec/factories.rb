@@ -16,4 +16,11 @@ FactoryGirl.define do
     album
     user_email 'jesseocon@gmail.com'
   end
+  
+  # factory :contact do 
+  #   
+  #   email 'jenesseocon@gmail.com'
+  #   name 'Jenesse Ocon'
+  #   user
+  # end
 end

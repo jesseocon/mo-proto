@@ -1,0 +1,2 @@
+module GoogleContactsHelper
+end
