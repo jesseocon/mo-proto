@@ -4,8 +4,8 @@
       <%= link_to image_tag('WebLogo.png', id: 'white-logo'), '#', class: 'logo' %>
       <ul>
           <li>
-              <%= image_tag('icons/CreateFolioButton.png') %>
-              CREATE A FOLIO
+              <%= link_to(image_tag('icons/CreateFolioButton.png'), new_album_path) %>
+              <%= link_to 'CREATE A FOLIO', new_album_path %>
           </li>
           <li>
               <%= image_tag('icons/FindFolioButton.png') %>
