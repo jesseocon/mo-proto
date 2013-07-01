@@ -1,6 +1,5 @@
 class Permission < Struct.new(:user)
-  def initialize(user)
-    allow :albums,          [:index, :new, :create, :edit, :update, :show, :destroy, :get_pics, :get_html_pics]
+  def initialize(user)          
     allow :folios,          [:index, :new, :create, :show, :destroy, :check_availability, :register_keyword, :deregister_keyword]
     allow :messages,        [:index, :new, :create, :edit, :update, :show, :destroy]
     allow :password_resets, [:new, :create, :edit, :update]
@@ -12,8 +11,9 @@ class Permission < Struct.new(:user)
     allow :inbox,           [:show, :create]
     allow :google_contacts, [:show, :callbacks, :get_client, :get_contacts]
     if user
-      allow :users, [:show]
-      allow :users, [:edit, :update, :destroy] do |u|
+      allow :albums,        [:index, :new, :create, :edit, :update, :show, :destroy, :get_pics, :get_html_pics]
+      allow :users,         [:show]
+      allow :users,         [:edit, :update, :destroy] do |u|
         u.id == user.id
       end
       allow_all if user.admin

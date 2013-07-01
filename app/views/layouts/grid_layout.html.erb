@@ -15,99 +15,56 @@
       <%= javascript_include_tag "photoMosaic/files/data/photoMosaic.data.js" %>
       <%= stylesheet_link_tag "photoMosaic/files/css/photoMosaic.css" %>
       <%= javascript_include_tag "photoMosaic/files/js/jquery.photoMosaic.js" %>
-      
-      <script type="text/javascript">
-          $(document).ready(function(){
-
-              /*$('#target').photoMosaic({
-                  // input examples
-                      input: 'json',
-                      gallery: PMalbum, // var PMalbum is defined in data/photoMosaic.data.js
-
-                      // input: 'xml',
-                      // gallery: 'data/photoMosaic.data.xml',
-
-                      // input: 'html',
-
-                  // lightbox settings
-                      modal_name : 'prettyPhoto',
-                      modal_ready_callback: function($pm) {
-                          $('a[rel^="prettyPhoto"]', $pm).prettyPhoto({
-                              overlay_gallery: false,
-                              slideshow: false,
-                              theme: "pp_default",
-                              deeplinking: false,
-                              social_tools: "",
-                              show_title: false
-                          });
-                      }
-              });*/
-              
-              $.ajax({
-                 url: '/albums/1/get_pics.json',
-                 type: 'GET', 
-              }).done(function(data){
-                 var AMalbum = data;
-                 
-                 $('#target').photoMosaic({
-                     input: 'json',
-                     gallery: AMalbum,
-                     padding: 4,
-                     prevent_crop: true,
-                     modal_name: 'prettyPhoto',
-                     modal_ready_callback: function($pm) {
-                         $('a[rel^="prettyPhoto"]', $pm).prettyPhoto({
-                             overlay_gallery: false,
-                             slideshow: false,
-                             theme: "pp_default",
-                             deeplinking: false,
-                             social_tools: "",
-                             show_title: false
-                         });
-                     }
-                     
-                 });
-              });
-
-          });
-      </script>
-      <style type="text/css">
-          body { background:#dfdfdf; color:#000000; font-size:12px; }
-          #container { width:75%; margin:15px auto 0px auto; }
-      </style>
     </head>
     <body>
         <div id="container">
-            <button id="tester" style="margin-bottom:20px;">Test button</button>
-            
-            <div id="target">
-
-            <!--  This is the way you would construct your gallery for {input:'html'}
-                <ul>
-                    <li>
-                        <a href="images/imgs/moleskineh.jpg">
-                            <img
-                                src="images/imgs/moleskineh_thumb.jpg"
-                                title="'moleskineh' - By Amir K (childofwar @ flickr)"
-                                alt="~~ alt text ~~"
-                            />
-                        </a>
-                    </li>
-                    <li><a href="#2"><img src="images/imgs/888.jpg" title="'888' - By doug.siefken (siefken @ flickr)"/></a></li>
-                    <li><a href="#3"><img src="images/imgs/l_t.jpg" title="'l_t' - Ros K (ros-k @ flickr)"/></a></li>
-                    <li><a href="#4"><img src="images/imgs/lumpini-park-lights.jpg" title="'Lumpini Park Lights' - By Mike Behnken (mikebehnken @ flickr)"/></a></li>
-                    <li><a href="#5"><img src="images/imgs/crazy-hills-of-san-fran.jpg" title="'Crazy Hills of San Francisco' - By Håkan Dahlström (dahlstroms @ flickr)"/></a></li>
-                    <li><a href="#6"><img src="images/imgs/christmas-25.jpg" title="'Christmas #25' - By Kevin Dooley (pagedooley @ flickr)"/></a></li>
-                    <li><a href="#7"><img src="images/imgs/mammoths.jpg" title="'mammoths' - By paul (dex) [dexxus @  flickr]"/></a></li>
-                    <li><a href="#8"><img src="images/imgs/empire-state-pigeon.jpg" title="'Empire State Pigeon' - By ZeroOne (villes @ flickr)"/></a></li>
-                    <li><a href="#9"><img src="images/imgs/paris-s-eveille.jpg" title="'Paris s'éveille' - By gadl (gadl @ flickr)"/></a></li>
-                    <li><a href="#10"><img src="images/imgs/koyaanisqatsi-patchwork.jpg" title="'koyaanisqatsi patchwork' - By alvazer (alvazer @ flickr)"/></a></li>
-                    <li><a href="#11"><img src="images/imgs/living-off-the-land.jpg" title="'Living Off the Land' - By MikeBehnken (mikebehnken @ flickr)"/></a></li>
-                    <li><a href="#12"><img src="images/imgs/water-tower-perspective.jpg" title="'water tower perspective' - By Paulo Brandão (paulobrandao @ flickr)"/></a></li>
-                </ul>
-            -->
-
+            <div class="row">
+                <div class='span12'>
+                    <%= link_to(
+                            "Share",
+                            "#myModal",
+                            {
+                                class: 'btn btn-primary',
+                                data: {
+                                    toggle: "modal"
+                                }
+                            }
+                        ) 
+                    %>
+                </div>
             </div>
+            <!-- Modal -->
+            <div id="myModal" 
+                class="modal hide fade" 
+                tabindex="-1" 
+                role="dialog"
+                aria-labelledby="myModalLabel"
+            >
+                <div class="modal-header">
+                    <button type="button" 
+                        class="close" 
+                        data-dismiss="modal" 
+                        aria-hidden="true"
+                    >
+                        x
+                    </button>
+                    <h3 id="myModalLabel">Modal Header</h3>
+                </div><!-- end of modal-header -->
+
+                <div class="modal-body">
+
+                </div><!-- end of modal-body -->
+
+                <div class="modal-footer">
+                    <button class="btn" data-dismiss="modal" aria-hidden="true">
+                        Close
+                    </button>
+                    <button button class="btn btn-primary">
+                        Save changes
+                    </button>
+                </div><!-- end of modal-footer-->
+            </div><!-- end of shareModal-->
+            <!-- End Modal -->
         </div> 
     </body>
 </html>

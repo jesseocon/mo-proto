@@ -45,7 +45,10 @@ module MoProto
     config.assets.precompile += [
       'final_tiles/jquery.finalTilesGallery.js',
       'final_tiles/vendor/modernizr-2.6.2.min.js',
-      'colorbox/jquery.colorbox-min.js'
+      'colorbox/jquery.colorbox-min.js',
+      'nailthumb/jquery.nailthumb.1.1.min.css',
+      'nailthumb/jquery.nailthumb.1.1.min.js',
+      'nailthumb/jquery.imgpreload.min.js'
     ] ######## ADD THE REST OF THE FILE NAMES
 
     # Use SQL instead of Active Record's schema dumper when creating the database.

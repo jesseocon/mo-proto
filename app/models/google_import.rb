@@ -25,6 +25,14 @@ class GoogleImport
     @json_response = client.get("http://www.google.com/m8/feeds/contacts/default/full?max-results=#{self.max_results}&alt=json").to_json
   end
   
+  def create_session_token
+    client = GData::Client::Contacts.new
+    client.authsub_token = self.single_use_token
+    session_token = client.auth_handler.upgrade()
+    self.single_use_token = session_token
+    return self.single_use_token
+  end
+  
   def create_contacts_hash_array
     contacts = []
     hashie = JSON.parse(self.json_response)
@@ -36,9 +44,17 @@ class GoogleImport
       element["gd$email"].each do |attribute|
         hash['email'] = attribute["address"]
       end
-      hash["name"] = element["title"]["$t"]
+      if element["title"]["$t"] == ""
+        hash["name"] = "None"
+      else
+        hash["name"] = element["title"]["$t"]
+      end
       contacts << hash
     end
     return contacts
-  end  
+  end
+  
+  def invited?(user_email)
+    Invitation.invitation_list.collect { |i| i.user_email }.include?(user_email)
+  end 
 end

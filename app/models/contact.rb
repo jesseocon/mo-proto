@@ -17,6 +17,7 @@ class Contact < ActiveRecord::Base
     end
   end
   
-  
-  
+  def invited?(user_email)
+    Invitation.invitation_list.collect { |i| i.user_email }.include?(user_email)
+  end
 end

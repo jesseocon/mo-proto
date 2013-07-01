@@ -68,5 +68,71 @@ html { font-family: Arial, sans-serif; background: #111; }
 .display-some {
     display:block;
 }
+.square-thumb {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border:white 7px solid;
+    -moz-box-shadow: 3px 3px 5px black;
+    -webkit-box-shadow: 3px 3px 5px black;
+    box-shadow: 3px 3px 5px black;
+}
+.place-nav {
+    margin-top:30px;
+    color:white;
+}
+#invite-list-container {
+    color:white;
+    margin-top:30px;
+}
+
+#invite-list-container ul {
+    list-style-type:none;
+}
+
+#invite-list-container table {
+    display:block;
+    background:white;
+    color:black;
+    width:100%;
+    border:black 2px solid;
+    -moz-box-shadow: 3px 3px 5px black;
+    -webkit-box-shadow: 3px 3px 5px black;
+    box-shadow: 3px 3px 5px black;
+}
+#invite-list-container table thead {
+
+}
+#invite-list-container thead tr {
+    background:grey;
+    border-bottom:solid black 2px;
+}
+#invite-list-container th {
+    text-align:left;
+}
+#invite-list-container th:nth-child(1) {
+    width:20px;
+}
+#invite-list-container th:nth-child(2) {
+    width:150px;
+}
+#invite-list-container th:nth-child(3){
+    width:350px;
+}
+#invite-list-container td {
+    text-align:left;
+}
+#invite-list-container tbody {
+    display:block;
+    height: 350px;
+    overflow: auto;
+}
+.top-spacer {
+    margin-top:20px;
+}
+
+#invite-list-container tr.disabled_row {
+    color:gray;
+}
+
 h1 { color: #fff; }
 h2 { color: yellow; font-size: 16px; }

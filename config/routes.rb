@@ -21,6 +21,12 @@ MoProto::Application.routes.draw do
     member do 
       get 'get_html_pics'
     end
+    member do 
+      get 'invite'
+    end
+    member do
+      get 'sync_gmail'
+    end
   end
   resources :messages
   resources :password_resets
@@ -39,6 +45,7 @@ MoProto::Application.routes.draw do
   resources :packages
   resources :charges
   resources :google_contacts
+  resources :invitations
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

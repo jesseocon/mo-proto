@@ -51,7 +51,7 @@ describe Invitation do
     emails = ['a@b.com', 'b@b.com', 'c@b.com', 'd@b.com']
     it "should create multiple invitations from an array of email addresses" do
       album_id = 199
-      Invitation.create_multiple(album_id, emails)
+      Invitation.create_multiple_from_emails(album_id, emails)
       Invitation.where(album_id: album_id).count.should == emails.length
     end
   end
@@ -60,7 +60,7 @@ describe Invitation do
     emails = ['a@b.com', 'a@b.com', 'b@b.com', 'c@b.com', 'd@b.com']
     it "should create one record less than than the email array length" do
       album_id = 200
-      Invitation.create_multiple(album_id, emails)
+      Invitation.create_multiple_from_emails(album_id, emails)
       Invitation.where(album_id: album_id).count.should == (emails.length - 1)
     end
   end
@@ -79,9 +79,38 @@ describe Invitation do
     ]
     it "should create 5 less records than the length of the emails array" do
       album_id = 201
-      Invitation.create_multiple(album_id, emails)
+      Invitation.create_multiple_from_emails(album_id, emails)
       Invitation.where(album_id: album_id).count.should == (emails.length - 5)
     end
+  end
+  
+  describe "creating multiple invitations with an array of 5 hashes that are valid" do 
+    hash_array = [
+        { user_email: 'jesseocon1@gmail.com', album_id: 9944 },
+        { user_email: 'jesseocon2@gmail.com', album_id: 9944 },
+        { user_email: 'jesseocon3@gmail.com', album_id: 9944 },
+        { user_email: 'jesseocon4@gmail.com', album_id: 9944 },
+        { user_email: 'jesseocon5@gmail.com', album_id: 9944 },
+      ]
+      it "should create the same number of records as the hash array" do 
+        Invitation.create_multiple_from_array(hash_array)
+        Invitation.where(album_id: 9944).count.should == hash_array.length
+      end
+  end
+  
+  describe "creating multiple invitations with an array of 5 hashes with one that is invalid" do 
+    hash_array = [
+        { user_email: 'jesseocon1@gmail.com', album_id: 9955 },
+        { user_email: 'jesseocon2@gmail.com', album_id: 9955 },
+        { user_email: 'jesseocon3@gmail.com' },
+        { user_email: 'jesseocon4@gmail.com', album_id: 9955 },
+        { user_email: 'jesseocon5@gmail.com', album_id: 9955 },
+      ]
+      
+      it "should create one record less than the length of the hash array" do 
+        Invitation.create_multiple_from_array(hash_array) 
+        Invitation.where(album_id: 9955).count.should == (hash_array.length - 1)
+      end
   end
     
 end

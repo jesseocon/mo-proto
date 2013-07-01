@@ -6,7 +6,7 @@ class GoogleContactsController < ApplicationController
   
   def callbacks
     @google_import = GoogleImport.new(single_use_token: params[:token], max_results: 1000, user_id: current_user.id)
-    @contacts = @google_import.make_contacts_array
+    @contacts = @google_import.make_contacts_array.sort_by { |hsh| hsh["name"] }
   end
   
   def get_contacts

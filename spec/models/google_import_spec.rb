@@ -18,13 +18,13 @@ describe GoogleImport do
   describe "the response from GoogleImport#return_authsub_url" do
     it "should contain the next url in the url" do
       encoded_next_url = CGI::escape(@google_import.next_url)
-      @google_import.return_auth_url.should include(encoded_next_url)
+      @google_import.auth_url.should include(encoded_next_url)
     end
     it "should contain session=1 parameter" do
-      @google_import.return_auth_url.should include(SESSION_TRUE)
+      @google_import.auth_url.should include(SESSION_TRUE)
     end
     it "should contain session=1 parameter" do
-      @google_import.return_auth_url.should include(SECURE_FALSE)
+      @google_import.auth_url.should include(SECURE_FALSE)
     end
   end
   

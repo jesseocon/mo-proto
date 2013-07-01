@@ -1,3 +1,11 @@
+<div class="container">
+    <div class="row">
+        <div class="span12" style="height:150px;background:gray;">
+            <%= @all_pics %>
+        </div>
+    </div>
+</div>
+
 <% @pics.each do |pic| %>
     <article class="tile ftg-set-1">
         <%= link_to pic.photo.url do  %>
@@ -24,4 +32,5 @@
         <% end %>  
     </article>
 <% end %>
+
 

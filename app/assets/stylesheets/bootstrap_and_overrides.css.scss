@@ -1,11 +1,17 @@
 @import "bootstrap";
 @import "bootstrap-responsive";
+html {
+    background: #333;
+}
 body {
   padding-top: 110px;
+  background: #333;
 }
 nav.navbar-inner {
-    background:white;
     height:90px;
+}
+header.navbar {
+    background:#333;
 }
 
 /* line 6, ../../app/assets/stylesheets/bootstrap_and_overrides.css.scss */

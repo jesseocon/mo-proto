@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    $(":checkbox").attr("autocomplete", "off");
     $(".tile a").colorbox({rel:'tile', transition:"fade", width:"75%", height:"75%"});
     $("#final-tg").finalTilesGallery({
         minTileWidth: 180,
@@ -91,6 +92,16 @@ $(document).ready(function(){
             }
         });
     });
+    
+    
+    jQuery('.nailthumb-container img').imgpreload({
+        each: function(){
+          $(this).parents('.nailthumb-container').nailthumb({width:225,height:225, fitDirection: 'top left', preload:false});
+        }, all: function(){
+        }
+    });
+    
+
 });
 
 (function ( $ ) {

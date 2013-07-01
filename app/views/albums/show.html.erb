@@ -1,33 +1,15 @@
-<div class="container">
+<div class="span12 place-nav">
+    <%= link_to 'Sync Gmail', invite_album_path(@album), 
+        class: 'btn btn-primary btn-large' %>
+</div>
+<div class="span12">
     <div class="row">
-        <div class="span12" style="height:150px;background:gray;">
-            <%= @all_pics %>
-        </div>
+        <% @pics.each do |pic| %>
+            <div class="span3">
+                <div class="nailthumb-container square-thumb">
+                    <%= image_tag(pic.photo.url, class: 'item') %>
+                </div>
+            </div>
+        <% end %> 
     </div>
 </div>
-<section id="final-tg">
-    <div class="ftg-items">
-        <% @pics.each do |pic| %>
-            <article id="article<%= pic.id %>" class="tile ftg-set-1">
-                <%= link_to pic.photo.url do  %>
-                    <%= image_tag(pic.photo.url, class: 'item') %>
-                    <div class="new-thing"
-                        data-star-url="<%= stars_path %>.json"
-                        data-uid="<%= @current_user.id %>"
-                        data-imid="<%= pic.id %>"
-                        id="star_<%= pic.id %>">
-                            <% if pic.stars.any? %>
-                               <%= image_tag('StarBlue.png') %>
-                           <% else %>
-                               <%= image_tag('StarWhite.png') %> 
-                            <% end %>
-                    </div>
-                    <div class="caption">
-                        <p>Test caption</p>
-                        <p>This is another caption</p>
-                    </div>
-                <% end %>  
-            </article>
-        <% end %>
-    </div>
-</section><!-- end of final-tg-->

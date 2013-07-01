@@ -1,5 +1,5 @@
 class AlbumsController < ApplicationController
-  before_filter :find_album, only: [:edit, :update, :show, :destroy, :get_pics, :get_html_pics]
+  before_filter :find_album, only: [:edit, :update, :show, :destroy, :get_pics, :get_html_pics, :invite, :sync_gmail]
   
   def index
     render :layout => 'grid_layout'
@@ -31,15 +31,39 @@ class AlbumsController < ApplicationController
   end
   
   def show
-    #render :layout => 'grid_layout'
-    @pics = @album.incoming_messages.order('id ASC').limit(10)
-    @all_pics = @album.incoming_messages.count
+    @pics = @album.incoming_messages.order('id ASC')
     @current_user = current_user
-    render :layout => 'final_tiles'
+    next_url = invite_album_url(@album)
+    @session_token = session[:token] if session[:token]
+    @google_import = GoogleImport.new(next_url: next_url, secure: false, sess: true)
+    render :layout => 'foliogrid'
   end
   
   def destroy
     @album.destroy
+  end
+  
+  def invite
+    @invites = Invitation.invitation_list(@album.id)
+    @current_user = current_user
+    @session_token = session[:token]
+    @folio_contacts = Contact.where(user_id: current_user.id)
+    if session[:token]
+      @google_import = GoogleImport.new(single_use_token: session[:token], max_results: 1000, user_id: current_user.id)
+      @contacts = @google_import.make_contacts_array
+      @contacts = @contacts.concat(@folio_contacts).sort_by { |hash| hash["name"] }
+    else
+      next_url = sync_gmail_album_url(@album)
+      @google_import = GoogleImport.new(next_url: next_url, secure: false, sess: true)
+      @contacts = @folio_contacts.sort_by { |hash| hash["name"] }
+    end 
+    render :layout => 'foliogrid'
+  end
+  
+  def sync_gmail
+    @google_import = GoogleImport.new(single_use_token: params[:token])
+    session[:token] = @google_import.create_session_token
+    redirect_to invite_album_url(@album)
   end
   
   def get_pics

@@ -1,0 +1,52 @@
+<div id="invite-list-container" class="span12">
+    <% if @session_token.nil? %>
+    <div class="row">
+        <div class="span12 top-spacer">
+            <p>It doesn't look like you've sync'ed your contacts from Gmail. Syncing now could save you a lot of typing.</p>
+            <%= link_to 'Sync Gmail', @google_import.auth_url, class: 'btn btn-primary btn-large' %>
+        </div><!-- end span12-->
+    </div><!-- end row-->
+    <% end %>
+    <div class="row">
+        <div class="span6 top-spacer">
+            <h2>Your Contact List</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th><%= check_box_tag "checkall", 1, false, id: 'checkall', class: 'checkall' %></th>
+                        <th>Name</th>
+                        <th>Email</th>
+                    </tr> 
+                </thead>
+                <tbody>
+                    <%= form_tag('/posts', autocomplete: 'off') do  %>
+                        <% @contacts.each_with_index do |contact, index| %>
+                        <% on_the_list = invited?(contact["email"], @album.id) %>
+                            <tr class="<%= row_class(on_the_list) %>">
+                                <td><%= check_box_tag "send_mail", 1, on_the_list, 
+                                        id: "send_to_#{index}", class: 'invite-email-checkbox',
+                                        data: {
+                                            email: "#{contact["email"]}", 
+                                            name: "#{contact["name"]}", 
+                                            userid: "#{@current_user.id}",
+                                            albumid: "#{@album.id}"
+                                            },
+                                        disabled: disabled?(on_the_list)
+                                    %>
+                                </td>
+                                <td><%= contact["name"] %></td>
+                                <td><%= contact["email"] %></td>
+                            </tr>
+                        <% end %>
+                    <% end %>
+                </tbody>
+            </table>
+        </div><!-- end span6 -->
+        <div class="span6 top-spacer">
+            <h2>Your Invite List <p id="post-invites" class="btn btn-primary btn-large" style="float:right; margin-top:-10px;">Send Invites</p></h2>
+            <ul id="invite-list">
+
+            </ul>
+        </div><!-- end of span6-->
+    </div><!-- end row -->
+</div><!-- end of invite-list-container-->
