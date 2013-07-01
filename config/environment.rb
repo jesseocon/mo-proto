@@ -15,14 +15,6 @@ MoProto::Application.initialize!
 # }
 
 
-ActionMailer::Base.smtp_settings = {
-  :address        => 'smtp.mandrillapp.com',
-  :port           => '25',
-  :authentication => :plain,
-  :user_name      => ENV['MANDRILL_USERNAME'],
-  :password       => ENV['MANDRILL_APIKEY'],
-  :domain         => 'frozen-spire-6104.herokuapp.com',
-  :enable_starttls_auto => true
-}
+
 
 
