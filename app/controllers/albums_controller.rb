@@ -2,7 +2,6 @@ class AlbumsController < ApplicationController
   before_filter :find_album, only: [:edit, :update, :show, :destroy, :get_pics, :get_html_pics, :invite, :sync_gmail]
   
   def index
-    render :layout => 'grid_layout'
     @albums = Album.all
   end
   

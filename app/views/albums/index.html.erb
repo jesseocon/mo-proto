@@ -1,0 +1,14 @@
+<div class="row" id="album-grid">
+    <% @albums.each do |album| %>
+        <div class="span3 bottom-spacer nailthumb-container square-thumb">
+            <%= link_to image_tag(album.incoming_messages.count > 0 ? album.incoming_messages.first.photo.url : "http://nicenicejpg.com/350"), album_path(album) %>
+        </div>
+        <div class="span3 bottom-spacer nailthumb-container square-thumb">
+           <%= link_to image_tag(album.incoming_messages.count > 0 ? album.incoming_messages.first.photo.url : "http://nicenicejpg.com/350"), album_path(album) %> 
+        </div>
+        <div class="span3 bottom-spacer nailthumb-container square-thumb">
+            <%= link_to image_tag(album.incoming_messages.count > 0 ? album.incoming_messages.first.photo.url : "http://nicenicejpg.com/350"), album_path(album) %>
+        </div>
+    <% end %> 
+</div>
+

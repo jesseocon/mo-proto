@@ -129,10 +129,14 @@ html { font-family: Arial, sans-serif; background: #111; }
 .top-spacer {
     margin-top:20px;
 }
+.bottom-spacer {
+    margin-top:20px;
+}
 
 #invite-list-container tr.disabled_row {
     color:gray;
 }
+
 
 h1 { color: #fff; }
 h2 { color: yellow; font-size: 16px; }
