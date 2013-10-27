@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   before_filter :find_user, only: [:edit, :update, :show, :destroy]
-  layout 'signing'
   def index
     @users = User.all
   end
@@ -10,7 +9,8 @@ class UsersController < ApplicationController
       redirect_to root_url
     else
       @user = User.new
-    end
+      render :layout => 'signing'
+    end  
   end
   
   def create
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    
+    render :layout => 'signing'
   end
   
   def update

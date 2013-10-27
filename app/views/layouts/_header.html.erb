@@ -8,16 +8,12 @@
               <%= link_to 'CREATE A FOLIO', new_album_path %>
           </li>
           <li>
-              <%= image_tag('icons/FindFolioButton.png') %>
-              FIND A FOLIO
-          </li>
-          <li>
-              <%= image_tag('icons/FindMemberButton.png') %>
-              FIND A MEMBER
-          </li>
-          <li>
-              <%= image_tag('icons/FindMemberButton.png') %>
-              HOW IT WORKS
+              <% if current_user %>
+                  <%= link_to 'Sign Out', logout_path, 
+                       method: :delete, 
+                       confirmation: "Are you sure" 
+                  %>
+              <% end %>
           </li>  
       </ul>
     </div>

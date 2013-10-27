@@ -1,0 +1,11 @@
+<div class="span12">
+    <div class="row">
+        <% @images.each do |image| %>
+            <div class="span3">
+                <div class="nailthumb-container square-thumb">
+                    <%= image_tag(image.pic.url, class: 'item') %>
+                </div>
+            </div>
+        <% end %> 
+    </div>
+</div>

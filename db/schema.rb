@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130622165626) do
+ActiveRecord::Schema.define(:version => 20131017192803) do
 
   create_table "albums", :force => true do |t|
     t.string    "name"
@@ -62,6 +62,17 @@ ActiveRecord::Schema.define(:version => 20130622165626) do
   end
 
   add_index "folios", ["user_id"], :name => "index_folios_on_user_id"
+
+  create_table "images", :force => true do |t|
+    t.string   "img_url"
+    t.string   "img_data"
+    t.string   "pic_content_type"
+    t.string   "pic_file_name"
+    t.integer  "pic_file_size"
+    t.datetime "pic_updated_at"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
 
   create_table "incoming_messages", :force => true do |t|
     t.string    "from"

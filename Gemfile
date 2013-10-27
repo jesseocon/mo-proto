@@ -38,8 +38,11 @@ end
 
 group :test do
   gem 'capybara', '1.1.2'
-  gem 'rb-fsevent', :require => false
   gem 'growl', '1.0.3'
+  gem 'launchy'
+  gem 'rb-fsevent', :require => false
+  gem 'spork'
+
 end
 
 group :production do

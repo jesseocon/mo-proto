@@ -38,6 +38,7 @@ MoProto::Application.routes.draw do
       get 'confirmation'
     end
   end
+  resources :images
   resources :sessions
   resources :stars
   resources :users

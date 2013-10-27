@@ -34,7 +34,6 @@ class Folio < ActiveRecord::Base
       :description  => "Rails Stripe Customer",
       :currency     => 'usd' 
     )
-    puts "***************CHARGE#{charge}"
     self.charge_id = charge.id
   end
   
